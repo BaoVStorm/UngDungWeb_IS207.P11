@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#id_123 {
+	background-color: #F00;
+	width: 200px;
+	height: 100px;
+}
+</style>
+<script src="../../jquery.js"></script>
+</head>
+<body>
+<div id="id_123"></div>
+<script src="../../jquery.js"></script> 
+<script>
+$(document).click(function(e) {
+	var x = $(id_123).width();
+
+    $('#id_123').width(x + 100);
+});
+</script>
+</body>
+</html>

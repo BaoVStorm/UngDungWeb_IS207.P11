@@ -1,0 +1,197 @@
+// gọi jquery
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+----------- windows -----------
+
+$(document).ready(function(){
+    $("button").click(function(){
+        $("div").load('welcome.txt');
+    });
+});
+
+alert('you clicked input radio checked');
+
+----------- selector for function --------
+
+$("#id")
+$(".class")
+
+$("p")
+
+$(this)
+
+$("p:last")
+
+$("[style]")				// chọn tất cả các phần tử có attr là "style"
+
+$(":file")				// chọn tất cả các kiểu input có kiểu là "file"
+
+$("p:odd")				// in ở dòng lẻ
+$("p:even")				// thực thi ở dòng chẵn
+		
+$("td:gt(3)")				// Lấy phần từ có giá trị lớn hơn 3
+$("tr:eq(1)")				// Lấy phần tử ở dòng 1
+
+$('li:not(.highlight)')			// chọn ra các phần từ ko có class "highlight"
+
+$('td:contains(aaa)')			// chọn phần tử có chứa văn bản "aaa"
+
+----------- function ---------
+
+$("div").load('welcome.txt');
+
+.addClass("a");
+.toggleClass("a"); 			// thêm class nếu chưa có, xoá nếu có
+.removeClass("a");
+.hasClass("a")				// kiểm tra có class a không
+
+.attr("title");				// Lấy giá trị của attribute có tên là "title"
+.attr('type', "password");		// đổi kiểu attributes type thành "password"
+removeAttr("title");
+
+// For select
+.val() || [];				// from input
+
+.each(function() { $(this).val() })	// for từng phần tử
+ 
+.text(title);
+.html('<i> aaa <i>');
+var htmlStr= $(this).html();
+
+var bang = $("<table border='1'></table>");
+.append(bang);				// Thêm vào cuối
+.prepend('<p> text </p>');		// Thêm vào đầu
+.appendTo('.inner');
+
+.closest('.header-row')			// tìm cha của this có class là header-row
+
+.remove();				// xoá phần tử
+
+.find("p")				// Tìm phần tử
+if($(this).find("p").length > 0)	// Kiểm tra có tag "p" hay không
+
+.next();				// lệnh kế tiếp
+
+.after('<p> kế tiếp </p>');		// Chèn lệnh sau 1 thẻ
+.before					// Chèn lệnh trước 1 thẻ
+
+.hide();
+
+.wrapAll("<div></div>");			// thêm div vào p
+
+var x=$("p").offset();
+    alert("Top: " + x.top + " Left: " + x.left);
+
+x=$("p").position();
+    alert("Top position: " + x.top + " Left position: " + x.left);
+
+$(".class").hide()		// tắt hiển thị
+$(".class").show()		// hiện thị lại
+
+------- css -------
+
+.css("background-color","yellow");	// thay đổi css của phần tử
+
+------- input -------
+
+$("input[type='number']").val()
+
+$(this).find("input[type='checkbox']");		
+$("input[name='Languages']:checked");		
+
+$("input[type='checkbox'][value='1']").is(":checked")	// true or false
+
+$(':radio:checked').click( function() { <code> });
+
+// event
+$("input").change( function() { <code> });
+
+$("p").hover(
+	function(){
+  		$(this).css("background-color", "yellow");
+ 	}, 
+	function(){
+		$(this).css("background-color", "pink");
+	});
+
+.focus()
+.blur()			// Ngược với blur
+
+.resize()
+
+.submit()		// submit form	
+
+$(document).ready(function(){
+    $("button").click(function(){
+      return "Hello wor11ld!";
+    });
+    $("button").click(function(event){
+      $("p").html(event.result);
+    });  
+});			// event.result
+
+-------- LoopSelect ---------
+	
+	CheckBox
+
+$('input[name="Languages"]:checked').each(function() {
+	console.log($(this).val());
+});
+
+OR
+
+$('.checkbox111:checked').each(function() {
+    console.log($(this).val()); // Hiển thị giá trị của checkbox được chọn
+});
+
+	Radio
+
+var selectedPet = $('input[name="pet"]:checked').val();
+
+
+
+-------- EventListener ---------
+
+// add Event "input" (click, ...)
+$(this).on("input", function() {
+    let minValue = parseInt(list_range[0].value),
+        maxValue = parseInt(list_range[1].value);
+        
+    console.log("minValue: ", minValue, " maxValue: ", maxValue);
+});
+
+
+// add Event keydown
+$(document).keydown(function(event) {
+    if (event.key === 'Enter') {
+        console.log('You pressed Enter!');
+        // Xử lý logic tại đây
+    }
+});
+
+----------- Ajax With JQuery -----------
+
+function CallAjax() {
+    var url = "index.php"; 
+    
+    // $.get(url + "?name=" + $("input[type='text']").val() + "&pass=" + $("input[type='pass']").val(), function(data,status){ 
+    //     $('#Box_id').html(data); 
+    //     console.log(data);  
+    // });
+
+    $.post(url, { 
+            name: $("input[type='text']").val(), 
+            pass: $("input[type='pass']").val()
+        }, function(data,status){            
+            $('#Box_id').html(data); 
+            console.log(data);
+        }
+    );
+
+    // console.log("Click Successfully");
+}
+
+
+
+
+

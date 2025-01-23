@@ -1,0 +1,42 @@
+
+/* body {
+    font-family: Arial, sans-serif;
+} */
+
+#header {
+    color: #8A2BE2;
+}
+
+hr {
+    color: #0000FF;
+    /* size: 3px; */
+}
+
+.container {
+    width: 400px;
+    height: 200px;
+    /* display: flex; */
+    /* background-color: antiquewhite; */
+}
+
+.label {
+    width: 160px;
+}
+
+.labelBox {
+    width: 400px;
+    display: flex;
+    align-items: flex-start;
+    
+    margin: 5px;
+    margin-left: 20px;
+}
+
+#loginButton {
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+p {
+    margin: 5px;
+}

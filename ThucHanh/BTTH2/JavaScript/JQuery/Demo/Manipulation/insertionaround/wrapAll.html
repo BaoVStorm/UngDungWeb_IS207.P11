@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+	border: 2px solid blue;
+}
+p {
+	background: yellow;
+	margin: 4px;
+}
+</style>
+<script src="../../jquery.js"></script>
+</head>
+<body>
+<button>Click to wrap all</button>
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+<script>
+$(document).ready(function(e) {
+   $('button').click(function(e) {
+    $("p").wrapAll("<div></div>");
+}); 
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KTGK_De1</title>
+
+        <!-- Tải thư viện jquery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+        <style>
+            html {
+                /* Căn giữa chìu dọc và chìu ngang */
+                display: flex; 
+                justify-content: center;
+                align-items: center;
+            }
+
+            #centerContainer {
+                /* Xắp xếp các phần tử theo chìu dọc */
+                display: flex;
+                flex-direction: column;
+                /* vì sắp xếp theo chìu dọc nên mới có thể căn giữa, 
+                nếu không thì lệnh "align-items: center" sẽ không thực hiện được vì mặc định xắp sếp theo chìu ngnag*/
+                
+                align-items: center;
+            }
+
+            /* CSS input */
+
+            #inputContainer {
+                /* Xắp xếp các phần tử theo chìu dọc */
+                display: flex;
+                flex-direction: column;   
+                /*  */
+                width: 500px;   
+            }   
+
+            #inputContainer label {
+                /*margin: top right bottom left */
+                margin: 20px 0px 8px 0px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            #inputContainer input {
+                padding: 10px;
+                font-size: 15px;
+
+                border-radius: 8px;
+                border-color:rgb(121, 120, 120);
+            }
+
+            /* CSS Body */
+
+            #bodyContainer {
+                margin: 40px 100px 0px;
+
+                /* 2 lệnh này giúp sắp xếp các thành phần con (các đĩa game) thành 1 hàng và xuống hàng khi quá hàng */
+                display: flex;
+                flex-wrap: wrap;
+                /*  */
+
+                /* Căn giữa các thành phần con (đĩa game) */
+                justify-content: center;
+
+                /* text-align: center; */
+                gap: 0px 50px;
+            }
+
+            .product {
+                padding: 20px 25px;   
+                
+                /* border: 2px solid rgb(172, 172, 172);
+                border-radius: 10px;
+                box-shadow: 10px 10px 15px rgba(146, 146, 146, 0.5); */
+
+                width: 250px;
+
+                display: flex;
+                flex-direction: column;   
+            
+                text-align: center;
+            
+                font-size: 20px;
+            }
+
+            /* CSS Từng đĩa */
+
+            .product .blockImg {
+                height: 310px;
+            }
+            
+            .blockImg img{
+                height: 100%;
+            }
+
+            .nameProduct {
+                margin: 15px 0px 5px;
+                font-weight: bold;
+                font-size: 22px;
+            }
+
+            .infoProduct {
+                margin: 5px;
+            }
+
+            .selectProduct{
+                margin: 5px 0px;
+            }
+
+            .selectProduct input[type="number"] {
+                width: 40px;
+                font-size: 20px;
+            }
+            
+            /* Button */
+            #cashButton {
+                margin-top: 20px;
+                margin-left: 15%;
+                padding: 10px 15px;
+                font-size: 18px;
+
+                background-color: rgb(5, 165, 26);
+                border: 0px;
+                border-radius: 8px;
+                color:aliceblue;
+            }
+
+            #cashButton:hover {
+                background-color: rgb(1, 139, 20);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="centerContainer">
+            <form id="inputContainer" >
+                <label for="inputName">Họ tên khách hàng</label> 
+                <input type="text" id="inputName" placeholder="Nguyễn Văn C"> 
+                <label for="inputPosition">Địa chỉ liên hệ/ Số điện thoại</label> 
+                <input type="text" id="inputPosition" placeholder="TP.HCM / 09xxxxxxxx">
+            </form>
+
+
+            <div id="bodyContainer"></div>   
+        </div>
+        
+        <button id="cashButton">Thanh Toán</button>
+    </body>
+
+    <!-- create product (game) -->
+    <script>
+        const games = [
+            {
+                name: "EA SPORTS FC 24",
+                imgUrl: "https://m.media-amazon.com/images/I/81PX1wwqq9L._AC_UF1000,1000_QL80_.jpg",  
+                nsx: "Electronic Arts",
+                price: 1500000,
+            },
+            {
+                name: "Marvel's Spider-Man 2",
+                imgUrl: "https://m.media-amazon.com/images/I/81WUPcfQ9OL._AC_UF1000,1000_QL80_.jpg",  
+                nsx: "Sony Entertainment",
+                price: 1500000,
+            },
+            {
+                name: "Sonic Superstars",
+                imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLtjm__tVWSFgFVAna__xXHqYHG8QeLtjJzA&s",  
+                nsx: "Sega",
+                price: 1400000,
+            },
+            {
+                name: "Hogwarts Legacy",
+                imgUrl: "https://m.media-amazon.com/images/I/81Gduh2Ku7L._AC_UF1000,1000_QL80_.jpg",  
+                nsx: "WB Games",
+                price: 1350000,
+            },
+            {
+                name: "Minecraft Legends",
+                imgUrl: "https://bizweb.dktcdn.net/100/488/040/products/minecraft-legends-ps5.jpg?v=1697279452927",  
+                nsx: "Microsoft",
+                price: 1200000,
+            },
+            {
+                name: "Dragon Quest Treasures",
+                imgUrl: "https://bizweb.dktcdn.net/100/488/040/products/dragon-quest-treasures-switch.jpg?v=1697270142713",  
+                nsx: "Square Enix",
+                price: 1150000,
+            },
+            {
+                name: "Moving Out 2",
+                imgUrl: "https://image.api.playstation.com/vulcan/ap/rnd/202303/1614/827a833ddfacfab06d92f275c211896376e417b6b1fcec60.jpg",  
+                nsx: "Team17 Digital Ltd",
+                price: 850000,
+            },
+            {
+                name: "No Man's Sky",
+                imgUrl: "https://images-na.ssl-images-amazon.com/images/I/81mjwmnUJQL.jpg",  
+                nsx: "Hello Games",
+                price: 1100000,
+            },
+            
+        ];
+
+        // hàm này sẽ chạy khi bắt đầu mở trang web (chạy tự động)
+        $(document).ready(function(){
+            var listProduct = "";
+            
+            games.forEach(game => {
+                listProduct += `
+                    <div class="product" >
+                        <div class="blockImg">
+                            <img src=${game.imgUrl} alt="gow">
+                        </div>
+                        
+                        <p class="nameProduct"> ${game.name}</p>
+                        
+                        <p class="infoProduct">
+                            <span>NSX: </span>
+                            <span class="NSX"> ${game.nsx} </span>
+                        </p>
+                        
+                        <p class="infoProduct"> 
+                            <span>Giá: </span>
+                            <span class="gia"> ${game.price} </span>
+                        </p>
+        
+                        <form class="selectProduct">
+                            <label for="count">Số lượng:</label>
+                            <input type="number" class="count" value="1">
+        
+                            <label for="buy">Chọn mua</label>
+                            <input type="checkbox" class="buy">
+                        </form> 
+                    </div>`;
+            });
+
+            $("#bodyContainer").append(listProduct);
+        });
+    </script>
+
+    <!-- jQuery and simple javascript -->
+    <script>
+        var button = $("#cashButton");
+        button.click(function actionButton(){
+            // Tạo ra một tab trống mới
+            var myWindow = window.open("", "_blank"); //javascript
+
+            // Lấy dữ liệu input từ id
+            var nameCus = $("#inputName").val()
+            var locationCus = $("#inputPosition").val();
+
+            // 1 string html để tiến hành tạo bill
+            var billHtml = `
+                    <div id="header"> <h3>Hoá đơn</h3> </div>
+                    <table>
+                        <tr>
+                            <td><b>Họ tên khách hàng: </b></th>
+                            <td>${nameCus}</td>
+                        </tr>
+                        <tr>
+                            <th><b>Dịa chỉ liên hệ/Số điện thoại: </b></th>
+                            <td>${locationCus}</td>
+                        </tr>
+                    </table>`;
+
+            var listGame = $(".product");
+            var sum = 0;
+
+            billHtml += "<table style='column-gap: 10px;'>";
+            billHtml += `
+                <tr>
+                    <th>Dĩa game</th>
+                    <th>SL</th>
+                    <th>Đơn giá</th>
+                    <th>Thành Tiền</th>
+                </tr>`;
+
+            listGame.each(function () {
+                const checkbox = $(this).find("input[type='checkbox']");
+                if(checkbox.is(":checked")) {
+                    const gameName = $(this).find(".nameProduct").html();
+                    const quantity = $(this).find("input[type='number']").val();
+                    const price = $(this).find(".gia").html();
+
+                    billHtml += `
+                        <tr>
+                            <td>${gameName}</td> 
+                            <td>${quantity}</td>
+                            <td>${price}</td>
+                            <td>${price * quantity}</td>
+                        </tr>`;
+                    
+                    sum += quantity * price;
+                }
+            });
+            billHtml += "</table>";
+
+            billHtml += `<p><b>Tổng tiền: ${sum}</b></p>`;
+
+            myWindow.document.write(billHtml); // javascript
+        });
+    </script>
+
+
+</html>

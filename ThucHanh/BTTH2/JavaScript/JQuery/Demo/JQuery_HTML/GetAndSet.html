@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script src="../jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$(".getname").click(function(){
+		str=$(".name").val();
+		$(".content").html(str);
+		$(".content1").text(str);
+	});
+});
+</script>
+</head>
+
+<body>
+<form>
+  <p>
+  <input type="text" class="name" />
+  </p>
+  <p>
+    </input>
+    <label>
+    <input type="button" name="Button" value="Get Value" class="getname"/>
+    </label>
+  </p>
+  <p>&nbsp;</p>
+</form>
+<p class="content"> 
+</p>
+<div class="content1">
+</div>
+</body>
+</html>

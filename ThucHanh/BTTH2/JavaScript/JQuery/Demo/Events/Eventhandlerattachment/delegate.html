@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $("div").delegate("button","click",function(){
+    $("p").slideToggle();
+  });
+});
+</script>
+</head>
+<body>
+<div style="background-color:yellow">
+<p>This is a paragraph.</p>
+<button>Click me!</button>
+</div>
+
+</body>
+</html>
+

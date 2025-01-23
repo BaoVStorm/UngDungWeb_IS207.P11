@@ -1,0 +1,53 @@
+[
+  {
+    "word": "baby",
+    "type": "danh từ",
+    "means": [
+      "đứa bé mới sinh; trẻ thơ",
+      "người tính trẻ con",
+      "(từ Mỹ,nghĩa Mỹ), (từ lóng) người yêu; con gái"
+    ]
+  },
+  {
+    "word": "babyhood",
+    "type": "danh từ",
+	"means": [
+      "tuổi thơ"
+	]
+  },
+  {
+    "word": "boyhood",
+    "type": "danh từ",
+	"means": [
+      "thời niên thiếu"
+    ]
+  },
+  {
+    "word": "boat",
+    "type": "danh từ",
+	"means": [
+      "tàu thuyền",
+      "đĩa hình thuyền (để đựng nước thịt...)"
+    ]
+  },
+  {
+    "word": "bath",
+    "type": "danh từ",
+	"means": [
+      "sự tắm",
+      "chậu tắm, bồn tắm, nhà tắm",
+      "(số nhiều) nhà tắm có bể bơi"
+    ]
+  },
+  {
+    "word": "bad",
+    "type": "danh từ",
+	"means": [
+      "xấu, tồi, dở",
+      "ác, bất lương, xấu",
+      "có hại cho, nguy hiểm cho",
+	  "nặng, trầm trọng",
+	  "ươn, thiu, thối, hỏng"
+    ]
+  }
+]

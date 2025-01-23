@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Untitled Document</title>
+  
+  <style>
+    p {
+      color: #600;
+      margin: 10px
+    }
+   
+    b {
+      color: #C3C
+    }
+  </style>
+  
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+</head>
+
+<body>
+
+  <p></p>
+
+  <select id= "Hiep">
+    <option>Hiep</option>
+    <option>ha</option>
+  </select>
+  
+  <select id ="multiple" multiple= "multiple">
+    <option>benh</option>
+    <option>khung</option>
+    <option selected="selected">dien</option>
+  </select>
+  
+  <script>
+    function displayVals() {
+      var HiepValues = $("#Hiep").val();
+      
+      var multipleValues = $("#multiple").val() || [];
+      
+      $("p").html("<b>Ban</b> " + 
+      HiepValues +
+      " <b>bi</b> " + 
+      multipleValues.join(", "));
+    }
+
+    $("select").change(displayVals);
+    displayVals();
+  </script>
+
+</body>
+</html>

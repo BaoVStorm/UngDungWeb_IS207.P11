@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+	background: yellow;
+	margin: 6px 0;
+}
+</style>
+<script src="../../jquery.js"></script>
+</head>
+<body>
+<p>Hello
+<h1>Tag h1</h1>
+<a>Tag a</a> <b>Tag b</b>
+</p>
+how are
+<p>you?</p>
+<button>Call remove() on paragraphs</button>
+<script>
+    $("button").click(function () {
+      $("p").empty();
+    });
+
+</script>
+</body>
+</html>

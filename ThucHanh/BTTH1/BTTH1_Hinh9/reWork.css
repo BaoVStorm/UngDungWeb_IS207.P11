@@ -1,0 +1,74 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: green;
+    padding: 10px 20px;   
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+
+    /* -- */
+    justify-content: space-around;
+}
+
+/* Chus ys */
+nav {
+    /* display: flex; */
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    /*  */
+    list-style-type: none;
+    /* margin: 0px;
+    padding: 0px;  */
+}
+
+nav a {
+    color: aliceblue;
+    /* font-size: 50px; */
+    padding: 10px 20px;
+    border-radius: 5px;
+    /*  */
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgb(0, 110, 0);
+    
+}
+
+.submenu {
+    background-color: rgb(0, 135, 0);
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    top: 86%;
+    z-index: 1;
+}
+
+/*  */
+
+li:hover  .submenu {
+    display: flex;
+}
+
+.submenu ul {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+}
+
+.submenu li {
+    padding: 15px 0px;
+}
+
+.submenu a {
+    padding: 15px 40px;
+}

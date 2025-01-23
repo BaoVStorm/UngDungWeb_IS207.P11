@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Câu 4</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    </head>
+    <body>
+        <span>chọn ngày</span>
+        <input type="number" placeholder="2023" id="cau4_chonngay">
+
+        <table border="1" id="cau4_table">
+        </table>
+    </body>
+</html>
+
+<script>
+    $("#cau4_chonngay").keydown(function(event) {
+        if (event.key === 'Enter') {
+            var url = "ListThueXe.php"; 
+
+            $.post(url, { 
+                    ngaythue: $("#cau4_chonngay").val()
+                }, function(data,status){            
+                    $('#cau4_table').html(data); 
+                }
+            );
+        }
+    });
+
+</script>
+

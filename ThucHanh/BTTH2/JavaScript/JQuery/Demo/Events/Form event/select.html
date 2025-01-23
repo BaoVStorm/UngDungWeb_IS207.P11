@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $("input").select(function(){
+    $("input").after(" Text marked!");
+  });
+});
+</script>
+</head>
+<body>
+<input type="text" name="FirstName" value="Hello World" />
+<p>Try to select the text inside the input field, and see what happens.</p>
+</body>
+</html>
+

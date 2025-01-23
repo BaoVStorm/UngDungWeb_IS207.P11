@@ -1,0 +1,48 @@
+//
+href="{{asset('css/layouts/header.css')}}
+
+//
+@if (! (1 < 2)) 
+	<h1> aaa </h1>
+@elseif()
+
+@else
+
+@endif
+
+//
+@extends("layouts.layout")
+@section("title", "$title")
+@section("content")
+	aaa
+@endsection
+
+//
+@empty(!$name) 
+
+@endempty
+
+//
+@isset($name)
+
+@endisset
+
+//
+@switch($name)
+	@case("Hoang")
+		aaa
+		@break
+	@default
+		dsd
+@endswitch
+
+//
+@for ($i = 0; $i <20; $i++) 
+	<h1> i = {{ $i }} </h1>
+@endfor	
+
+//
+@while($i < 10)
+	<h1> i = {{$i}} </h1>
+	{{$ i--; }}
+@endwhile

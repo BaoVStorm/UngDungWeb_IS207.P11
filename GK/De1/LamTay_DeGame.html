@@ -1,0 +1,224 @@
+<!-- Câu 1 -->
+
+<body> 
+    <!-- Không cần ghi jquery này khi làm bài -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <div id="centerContainer">
+        <form id="inputContainer" >
+            <label for="inputName">Họ tên khách hàng</label> 
+            <input type="text" id="inputName" placeholder="Nguyễn Văn C"> 
+            
+            <label for="inputPosition">Địa chỉ liên hệ/ Số điện thoại</label> 
+            <input type="text" id="inputPosition" placeholder="TP.HCM / 09xxxxxxxx">
+
+        </form>
+
+        <div id="bodyContainer"> </div>    
+   </div>
+    
+
+   <input type="button" id="cartButton" value="Thanh Toán">
+
+   
+</body>
+
+<script>
+    const games = [
+        {
+            name: "EA SPORTS FC 24",
+            imgUrl: "EA_Sports.jpg",  
+            nsx: "Electronic Arts",
+            price: 1500000,
+        },
+        {
+            name: "Marvel's Spider-Man 2",
+            imgUrl: "SpiderMan.jpg",  
+            nsx: "Sony Entertainment",
+            price: 1500000,
+        },
+        {
+            name: "Sonic Superstars",
+            imgUrl: "Sonic.jpg",  
+            nsx: "Sega",
+            price: 1500000,
+        }
+
+        // Thêm những cái khác nữa tuỳ vào bài, bài có gì mình thêm đó
+    ];
+
+    $(document).ready(function () {
+        // chú ý phải là kiểu var
+        var html = "";
+
+        // javascript
+        games.forEach(game => {
+            html += `
+                <div class="product" >
+                    <img src="${game.img}" alt="">
+
+                    <p class="nameProduct"> ${game.name} </p>
+                    
+                    <p>
+                        <span> NSX: </span>
+                        <span class="NSX">  ${game.nsx} </span>
+                    </p>
+
+                    <p>
+                        <span> Giá: </span>
+                        <span class="priceProduct"> ${game.price} </span>
+                    </p>
+                    
+                    <div>   
+                        <p>Số lượng</p>
+                        <input type="number" class="qua" value="1">
+                        <p>Chọn mua</p>
+                        <input type="checkbox" class="checkboxx">
+                    </div>
+
+                </div>
+            `;
+        });
+
+        $("#bodyContainer").append(html);
+    });
+
+</script>
+
+<!-- Câu 2 -->
+
+
+<script>
+    $("#cartButton").click(function() {
+        var myWindow = window.open("", "_blank");
+
+        var html = "";
+
+        const name = $("#inputName").val();     // ádfsadfasfa
+        
+        const location = $("#inputPosition").val(); // 13323
+
+        
+        html += `
+            <h1> Hoá đơn </h1>
+            <table>
+                <tr>
+                    <th> Họ tên </th>
+                    <td> ${name} <td>
+                </tr>
+                
+                <tr>
+                    <th> Địa chỉ liên hệ </th>
+                    <td> ${location} </td>
+                </tr>
+            </table>
+            `;
+
+        html += `
+            <table>
+                <tr>
+                    <th>Đĩa game</th>
+                    <th>SL</th>
+                    <th>Đơn giá</th>
+                    <th>Thành tiền</th>
+                </tr>
+        `;
+
+        var sum = 0;
+
+        // jquery
+        $(".product").each(function(){
+
+            const checkbox = $(this).find(".checkboxx");
+            
+            if(checkbox.is(":checked")) {
+
+                const name = $(this).find(".nameProduct").text();
+                const price = $(this).find(".priceProduct").text();
+                const quantity = $(this).find(".qua").val();
+
+                html += `
+                    <tr>
+                        <td> ${name} </td>
+                        <td> ${quantity} </td>
+                        <td> ${price} </td>
+                        <td> ${quantity * price} </td>
+                    </tr>
+                `;
+
+                sum += quantity * price;
+            }
+        });
+
+        html += "</table>";
+
+        html +=  `<h1> Tổng tiền: ${sum} </h1>`;
+
+        myWindow.document.write(html);
+    });
+</script>
+
+
+
+
+
+<!-- 
+<script>
+    $("#cashButton").click(function (){
+        var myWindow = window.open("", "_blank"); 
+
+        var nameCus = $("#inputName").val()
+        var locationCus = $("#inputPosition").val();
+
+        var billHtml = `
+                <div id="header"> <h3>Hoá đơn</h3> </div>
+                <table>
+                    <tr>
+                        <th>Họ tên khách hàng: </th>
+                        <td>${nameCus}</td>
+                    </tr>
+                    <tr>
+                        <th>Dịa chỉ liên hệ/Số điện thoại: </th>
+                        <td>${locationCus}</td>
+                    </tr>
+                </table>`;
+
+        var listGame = $(".product");
+        var sum = 0;
+
+        billHtml += "<table>";
+        billHtml += `
+            <tr>
+                <th>Dĩa game</th>
+                <th>SL</th>
+                <th>Đơn giá</th>
+                <th>Thành Tiền</th>
+            </tr>`;
+
+        listGame.each(function () {
+            const checkbox = $(this).find("input[type='checkbox']");
+            if(checkbox.is(":checked")) {
+                const gameName = $(this).find(".nameProduct").html();
+                const quantity = $(this).find("input[type='number']").val();
+                const price = $(this).find(".priceProduct").html();
+
+                billHtml += `
+                    <tr>
+                        <td>${gameName}</td> 
+                        <td>${quantity}</td>
+                        <td>${price}</td>
+                        <td>${price * quantity}</td>
+                    </tr>`;
+                
+                sum += quantity * price;
+            }
+        });
+        billHtml += "</table>";
+
+        billHtml += `<p><b>Tổng tiền: ${sum}</b></p>`;
+
+        myWindow.document.write(billHtml); // javascript
+    });
+</script> -->
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Exploring jQuery</title>
+	<meta charset="utf-8">
+	<style>
+body {
+	font-size: 36px;
+}
+
+td {
+	padding: 10px;
+}
+.alt {
+	background-color: #FC6;
+}
+</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
+	<script>
+	$(document).ready(function() {
+		$('#navi>li').addClass('highlight');
+		// $('p + span').css('color','#606');
+		$('#navi li:not(.highlight)').css('background-color','#FF3');
+			
+		$(':radio:checked').click(function(){
+			alert('you clicked input radio checked');
+		});
+		//odd tiếng việt là lẻ,nhưng khi thay đổi css yêu cầu dòng chẵn vì số dòng đánh dấu từ 0
+		//$('tr:odd').addClass('alt');
+		$('tr:odd').addClass('alt');
+		$('td:contains(Bruce Willis)').addClass('red');
+		$('td:contains(Bruce Willis)').next().addClass('green');
+		$('td:contains(Bruce Willis)').parent().children().addClass('blink');
+  });
+	</script>
+	</head>
+<body>
+<ul id="navi">
+    <li>Li 1</li>
+    <ul>
+		<li>Li 1.1</li>
+		<li>Li 1.2</li>
+		<li>Li 1.3</li>
+	</ul>
+    <li>Li 2</li>
+    <li>Li 3</li>
+    <li>Li 4</li>
+    <li>Li 5</li>
+</ul>
+<input type="radio" name="gender" checked="checked" />
+Nam <br/>
+<br/>
+<table>
+      <tr>
+    <td>Movies</td>
+    <td>Actors/ Actresses</td>
+    <td>Year Make</td>
+  </tr>
+      <tr>
+    <td>Terminator</td>
+    <td>arnold schwarzenegger</td>
+    <td>1991</td>
+  </tr>
+      <tr>
+    <td>Die Hard</td>
+    <td>Bruce Willis</td>
+    <td>2000</td>
+  </tr>
+      <tr>
+    <td>Speed</td>
+    <td>Sandra Bullock</td>
+    <td>1997</td>
+  </tr>
+      <tr>
+    <td>Independence Day</td>
+    <td>Will Smith</td>
+    <td>1999</td>
+  </tr>
+      <tr>
+    <td>Armageddon</td>
+    <td>Bruce Willis</td>
+    <td>1997</td>
+  </tr>
+      <tr>
+    <td>Under Siege</td>
+    <td>Steven Seagal</td>
+    <td>1996</td>
+  </tr>
+      <tr>
+    <td>Avatar</td>
+    <td>Unknown</td>
+    <td>2010</td>
+  </tr>
+    </table>
+</body>
+</html>

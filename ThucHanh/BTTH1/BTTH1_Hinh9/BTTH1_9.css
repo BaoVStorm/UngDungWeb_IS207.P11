@@ -1,0 +1,89 @@
+:root {
+    --main-bg-color: cornflowerblue;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+    /* Màu nền */
+    background-color: #4CAF50; 
+    color: white; /* Màu chữ */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav {
+    display: flex;
+    /* Để định vị menu con */
+    position: relative; 
+}
+nav ul {
+    /* Loại bỏ dấu chấm */
+    list-style-type: none; 
+    /* Xóa khoảng cách bên trong */
+    padding: 0; 
+    /* Xóa khoảng cách bên ngoài */
+    margin: 0; 
+    
+    /* Hiển thị các mục trong hàng */
+    display: flex; 
+    
+    gap: 15px; /* Khoảng cách giữa các mục */
+}
+nav a {
+    color: white; /* Màu chữ của các mục */
+    text-decoration: none; /* Không gạch chân */
+    padding: 8px 15px; /* Khoảng cách bên trong các mục */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+}
+nav a:hover {
+    background-color: #45a049; /* Màu nền khi hover */
+}
+.submenu {
+    /* Ẩn menu con */
+    display: none; 
+    /* Định vị tuyệt đối */
+    position: absolute; 
+    background-color: #4CAF50; /* Màu nền của menu con */
+    padding: 10px; /* Khoảng cách bên trong menu con */
+    border-radius: 5px; /* Bo góc menu con */
+    top: 140%; /* Xuất hiện dưới mục cha */
+    /* left: 0; */
+    /* width: 150px; */
+    /* height: 300px; */
+    z-index: 1; /* Đảm bảo menu con nằm trên các phần tử khác */
+}
+li:hover .submenu {
+    /* Hiển thị menu con khi hover vào mục cha */
+    display: flex; 
+}
+.submenu ul{
+    /* Hiển thị menu con dưới dạng danh sách */
+    display: block; 
+    
+    /* Xóa khoảng cách bên trong */
+    /* padding: 10px;  */
+    
+    /* Xóa khoảng cách bên ngoài */
+    /* margin: 20px;  */
+}
+
+.submenu li{
+    /* Xóa khoảng cách bên trong */
+    padding: 10px; 
+    
+    /* Xóa khoảng cách bên ngoài */
+    /* margin: 20px;  */
+}
+
+/* Giữ cho menu con mở khi hover vào nó */
+/* .submenu:hover {
+    display: block; 
+} */
+
+#header{
+    margin-right: 100px;
+}

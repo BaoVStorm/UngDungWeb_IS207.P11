@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  
+  <script>
+  $(document).ready(function(){
+    
+    $("p").click(function () {
+      $("p").fadeOut("slow");
+    });
+
+  });
+  </script>
+  <style>
+  p { font-size:150%; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <p>
+    If you click on this paragraph
+    you'll see it just fade away.
+  </p>
+</body>
+</html>

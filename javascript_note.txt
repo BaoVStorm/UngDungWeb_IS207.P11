@@ -1,0 +1,238 @@
+var a = `${10 + 20}`;
+
+// gọi file javascript.js
+<script src="javascript.js"></script>
+<script>  
+	// abc
+</script>
+
+------- biến ---
+let (có thể sử dụng ở hàm con)
+const (nội bộ trong hàm đó, hàm con của nó cũng không sử dụng đc)
+
+var a = "sdfsdf" + 5;  		//String
+a = 5000; 			//number
+
+var b = parseInt("123123");
+var c = parseFloat("12" + 34.56); 	// Chuyển string sang float
+var a = floatnumber.toString();		// chuyển số sang string
+
+var t = true, f = false;
+
+-------- Xâu -------
+var str = "ABCXYZ123ABC";
+
+str.length			// chiều dài: 11
+str.charAt(1)		// A[i]: "B"
+str.indexOf("XYZ")		// tìm xâu: 3
+str.lastIndexOf("World")
+str.substring(0, 5)		// xâu con: ABCXY
+str.replace("ABC", "123")	// thay thế đầu: 123XYZ123ABC (thay thế phần tử đầu)
+	str.replace(/ABC/g, "123");	// thay thế hết:  123XYZ123123 (không có "")
+
+str.toUpperCase()
+str.toLowerCase()
+str.trim()
+str.split(",")
+str.includes("ABC")		// true
+
+-------- mảng ---
+	Cố định
+var A = new Array(10);		// mảng 1 chiều
+var A = [];
+
+for (i = 0; i<10; i++)
+	A[i] = new Array(20);	// mảng 2 chiều
+
+A.forEach(game => {
+	var name = ${game.name};
+});
+
+
+	flex
+let a = []
+a[0] = []
+a[0][0] = 1
+a[0][1] = 2
+a[1] = []
+a[1][0] = 3
+a[1][1] = 4
+
+======= Hàm mảng
+	
+cars.push()	// Thêm vào cuối
+//cắt aray
+cars.splice(startIndex, deleteCount);	// cắt array với số lượng
+		
+cars = cars.slice(startIndex, endIndex);	// cắt array
+	slice(-number)				// cắt number phần tử cuối
+
+-------- object ---
+const potCategories = {
+    "Theo kiểu dáng cây": [
+      "Cây Cao & Lớn Trong Nhà",
+      "Cây Cảnh Mini"
+    ],
+    "Theo vị trí đặt": [
+      "Cây Cảnh Để Bàn",
+      "Cây Cảnh Văn Phòng"
+    ]
+  };
+ 
+for (let category in potCategories) {
+
+  // Duyệt qua các loại chậu trong nhóm
+  for (let i = 0; i < potCategories[category].length; i++) {
+    console.log(potCategories[category][i]); 
+  }
+
+  console.log("");  // Thêm dòng trống giữa các nhóm
+}
+
+--------- hàm ---------
+
+// qua chạy trang mới (aaa.php với get là maddl)
+window.location.href = 'aaa.php?maddl=' + maddl;
+
+function aa() {	
+	// return 12;
+}
+
+// tương tự như 1 hàm (giống với function)
+const slider=(name = "VStorm")=>{ 
+    console.log(name + "_pro_vl");
+}
+
+eval("x + y + 5");		// Chuỗi thành biểu thức
+
+with(document) {
+	write("aa");
+	write("111");
+}
+
+.innerHTML = ;
+
+// tạo ra 1 tab mới
+var myWindow = window.open("", "_blank"); 
+	myWindow.document.write(billHtml); 
+--------- lớp ---------
+
+function person(first_name, last_name, age, sex){
+	this.first_name=first_name;
+	this.last_name=last_name;
+	this.age=age;
+	this.sex=sex;
+	this.printStats=printStats;
+}
+
+function printStats(){
+	document.write("Name :" + this.last_name + " " + this.first_name + "<br>" );
+	document.write("Age :"+this.age+"<br>");
+	document.write("Sex :"+this.sex+"<br>");
+}
+
+var per1 = new persion("Thuy", "Dau Bich", "23", "Female");
+
+----------- Math -----------
+Math.PI
+Math.E
+Math.abs(-10)
+Math.pow(2, 3)
+Math.sqrt(16)
+Math.round(4.5)	// 5 làm tròn số nguyên gần nhất
+Math.ceil(4.1)	// 5 làm tròn số nguyên lớn hơn gần nhất	
+Math.floor(4.9)	// 4 ngược lại ở trên	
+Math.sin(Math.PI / 2) // tan cos
+Math.log(1)
+Math.exp(1)	// e mũ 1
+Math.random()	// random [0, 1]
+Math.max(1, 2, 3)
+Math.min(1, 2, 3)
+
+----------- Date -----------
+getDate() 	// Ngày: 1..31
+getDay() 	// Ngày trong tuần: 0 (chủ nhật), 1(thứ 2)
+getHours() 	// Giờ: 0..23
+getMinutes() 	// Phút: 0..59
+getMonth() 	// Tháng: 0 (tháng 1)…11(tháng 12)
+getSeconds() 	// Giây: 0..59
+getTime() 	// Giờ theo mili giây
+getFullYear() 	// Năm
+
+now = new Date();
+
+----------- Event -----------
+onClick
+onFocus
+onChange
+onBlur
+onMouseOver
+onMouseOut
+onMouseDown
+onMouseUp
+onLoad
+onSubmit
+onResize
+
+----------- Ajax With JavaScript -----------
+
+function CallAjax() {
+    var url = "index.php"; 
+    
+    var param = "name=" + $("input[type='text']").val() + "&pass=" + $("input[type='pass']").val(); 
+    
+    var xmlHttp = new XMLHttpRequest();
+        // ---- With POST ----
+        xmlHttp.open("POST", url, true); 
+        xmlHttp.send(param);
+        
+        // ---- With GET ----
+        // xmlHttp.open("GET", url + "?" + param, true); 
+        // xmlHttp.send(null);
+    
+    xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
+    
+    // Đón dữ liệu từ server trả về 
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) { 
+            // Function here
+            $("#Box_id").html("<p>" + xmlHttp.responseText + "</p>"); 
+        } 
+    } 
+}
+
+----------------------- Code là chính (phần này không thi, chỉ để code giao diện) -----------------------
+// Xuất thông tin để kiểm tra
+console.log(object)
+
+
+// Lặp lại
+setInterval(
+	function() {
+        	console.log("print");
+        }, 
+	1000
+);
+
+// get window url
+window.location.origin // lấy main url (trang chính)
+
+window.location.href // lấy url của trang hiện tại
+
+window.location.host // lấy tên host của trang
+	
+
+-------------- AddEventListener -------------
+.addEventListener('click', function() {
+    console.log('Element clicked');
+});
+
+
+.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        console.log('You pressed Enter!');
+        // Xử lý logic tại đây
+    }
+});
+
+

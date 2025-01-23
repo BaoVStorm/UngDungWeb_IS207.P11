@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>De2GK</title>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+        <style>
+            html {
+                font-family: Arial, Helvetica, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            body {
+                display: flex;
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            #inputContainer {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            #inputContainer label {
+                font-weight: bold;
+            }
+
+            #inputContainer input, textarea {
+                padding: 10px;
+                margin: 5px 0px 15px;
+
+                border: 2px solid rgb(136, 136, 136);
+                border-radius: 5px;
+
+                width: 100%;
+            }
+
+            #inputContainer textarea {
+                border-width: 1px;
+                padding-top: 7px;
+            }
+
+            /* --- Button ---*/
+
+            #buttonContainer {
+                justify-content: center;
+
+                display: flex;
+                width: 100%;
+
+                gap: 30px;
+            }
+
+            #buttonContainer input[type="button"] {
+                background-color: rgb(36, 36, 184);
+                color: aliceblue;
+                font-size: 15px;
+                border: 0px;
+                width: 25%;
+            }
+
+            #buttonContainer input[type="button"]:hover {
+                background-color: rgb(44, 44, 212);
+            }
+
+            #buttonContainer input[type="Reset"] {
+                background-color: rgb(117, 128, 26);
+                color: aliceblue;
+                font-size: 15px;
+                border: 0px;
+                width: 25%;
+            }
+
+            #buttonContainer input[type="Reset"]:hover {
+                background-color: rgb(139, 151, 32);;
+            }
+
+            /* --- contentContainer --- */
+            #contentContainer {
+                margin: 50px 0px;
+
+                width: 80%;
+                display: flex;
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 20px 50px;
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                padding: 10px 0px;
+                gap: 20px;
+
+                width: 250px;
+                height: 400px;
+                /* background-color: rgb(240, 240, 240); */
+
+                /* border: 1px solid rgb(129, 129, 129);
+                border-radius: 10px; */
+            }
+
+            .content-img {
+                height: 50%;
+            }
+
+            .content-img img {
+                height: 100%;
+                border-radius: 10px;
+            }
+
+            .content p {
+                margin: 0px;
+            }
+
+            .content a {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="inputContainer">
+            <form>
+                <h1>Website Rao vặt</h1>
+ 
+                <label for="name" >Tên sản phẩm</label>
+                <input type="text" id="name" placeholder="Tai nghe" value="Iphone 13 ProMax">
+                
+                <label for="price">Giá</label>
+                <input type="text" id="price" placeholder="30000" value="30000000">
+                
+                <label for="seller">Người bán</label>
+                <input type="text" id="seller" placeholder="Nguyễn A" value="ngocanh">
+                
+                <label for="location">Địa chỉ liên hệ / Số điện thoại</label>
+                <input type="text" id="location" placeholder="Thủ Đức / 09xxxxxxxx" value="xxx">
+                
+                <label for="status" id="aa">Tình trạng sản phẩm</label>
+                <input type="text" id="status" placeholder="99%" value="100%">
+
+                <label for="detail">Mô tả chi tiết</label>
+                <textarea name="textarea" id="detail" rows="5" placeholder="Chi tiết sản phẩm" >cute</textarea>
+
+                <input type="text" id="linkimg" placeholder="Link hình ảnh" value="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-13-pro-max.png">
+
+
+                <div id="buttonContainer">
+                    <input type="button" id="insert" value="Thêm">
+                    
+                    <input type="reset" id="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+
+        <div id="contentContainer"> </div>
+    </body>
+
+    <!-- Thao tác button -->
+    <script>
+        const list = [];
+        
+        // Button insert
+        $("#insert").click(function(){
+            const name = $("#name").val();
+            const price = $("#price").val();
+            const seller = $("#seller").val();
+            const location = $("#location").val();
+            const status = $("#status").val();
+            const detail = $("#detail").val();
+            const img = $("#linkimg").val();
+            
+            const index = list.length;
+            list.push({
+                name: name,
+                img: img,
+                price: price,
+                status: status,
+                seller: seller,
+                location: location,
+                detail: detail
+            });
+
+            const con = $("<div class='content'> <div>");
+
+            con.append(`
+                <div class="content-img">
+                    <img class="img" src="${img}" alt="">
+                </div>
+
+                <a onclick="press(${index})" href="#" >${name}</a>
+                
+                <p class="content-text">
+                    <span>Giá: </span>
+                    <span class="price">${price}</span>
+                </p>
+
+                <p class="content-text">
+                    <span>Tình trạng: </span>
+                    <span class="status">${status}</span>
+                </p>
+
+                <p class="content-text">
+                    <span>Người bán: </span>
+                    <span class="seller">${seller}</span>
+                </p>
+
+                <p class="content-text">
+                    <span>Liên hệ: </span>
+                    <span class="location">${location}</span>
+                </p> 
+                `);
+
+            $("#contentContainer").append(con);
+        });
+
+        // Button reset
+        $("#reset").click(function() {
+            $("#contentContainer").html("");
+
+            list = [];
+        });
+    </script>
+
+    <!-- Thao tác a -->
+    <script>
+        function press(index) {
+            var myWindow = window.open("", "_blank");
+
+            const img = list[index].img;
+            const name = list[index].name;
+            const price = list[index].price;
+            const status = list[index].status;
+            const seller = list[index].seller;
+            const location = list[index].location;
+            const detail = list[index].detail;
+                
+            const des = `
+                <div style="display: flex; ">
+                    <img src="${img}"> </img>
+                    
+                    <div style="display: flex; flex-direction: column; width: 400px">
+                        <h1>${name}</h1>
+                        <p>Giá: <b>${price}</b></p>
+                        <p>Tình trạng: <b>${status}</b></p>
+                        <p>Người bán: <b>${seller}</b></p>
+                        <p>Liên hệ: <b>${location}</b></p>
+                    </div>
+                </div>
+
+                <h1> Chi tiết </h1>
+                <p>${detail}</p>
+            `;
+
+            myWindow.document.write(des); // javascript
+        }
+    </script>
+</html>

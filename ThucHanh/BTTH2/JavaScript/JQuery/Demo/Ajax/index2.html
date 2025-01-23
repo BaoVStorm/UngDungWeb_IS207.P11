@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ajax2</title>
+        <meta charset="utf-8">
+        <script src="../jquery.js"></script>
+        
+        <script>
+            $(document).ready(function() {
+                $('input').click(function() {
+                    $("h1").load("welcome.txt");
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <h1>ABCXYZ123</h1>
+
+        <input type="button" value="click here">
+    </body>
+</html>

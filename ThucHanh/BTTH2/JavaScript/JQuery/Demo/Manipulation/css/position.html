@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    x=$("p").position();
+    alert("Top position: " + x.top + " Left position: " + x.left);
+  });
+});
+</script>
+</head>
+<body>
+<div>
+<br>
+<br>
+<p>This is a paragraph.</p>
+</div>
+<button>Return the top and left position of the p element</button>
+
+</body>
+</html>

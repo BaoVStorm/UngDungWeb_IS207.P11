@@ -1,0 +1,31 @@
+table {
+    /* width: 500px; */
+    border-spacing: 0px;
+}
+
+th, td {
+    padding: 2px;
+    width: 80px;
+    text-align: center;
+}
+
+table th {
+    color: rgb(165, 23, 23);
+    background-color:bisque
+}
+
+.TK_Web {
+    background-color: greenyellow;
+}
+
+.HDH {
+    background-color: aqua;
+}
+
+.CSDL {
+    background-color:rgb(255, 55, 55)
+}
+
+.LTDT {
+    background-color: yellow;
+}

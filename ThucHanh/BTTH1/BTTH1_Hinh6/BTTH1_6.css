@@ -1,0 +1,36 @@
+body {
+    background-color: #FFEDCA;
+}
+
+#container {
+    background-color: rgb(175, 175, 175);
+    /* height: 500px; */
+    width: 600px;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+}
+
+.row{
+    margin: 2px;
+}
+
+#location {
+    width:100%;
+}
+
+.title {
+    color: blue;
+}
+
+#button {
+    text-align: center;
+}
+
+.content {
+    /* display: flex;
+    align-items: flex-start; */
+}

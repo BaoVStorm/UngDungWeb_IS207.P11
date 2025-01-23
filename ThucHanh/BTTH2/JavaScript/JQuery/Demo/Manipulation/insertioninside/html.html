@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Manipulation DOMt</title>
+</head>
+
+<body>
+<button id="button1">Click to view content id "demo"</button>
+<button id="button2">Click to change content id "demo"</button>
+<div id="demo">
+  <p>Đoạn văn bản 1</p>
+  <p>Đoạn văn bản 2</p>
+</div>
+</body>
+<script src="../../jquery.js"></script>
+<script>
+$(document).ready(function(e) {
+    $('button#button1').click(function(){
+		var rs = $("#demo").html();
+		alert(rs);
+		});
+	$('button#button2').click(function(){
+		var rs = $("#demo").html('<p>Đoạn văn bản được thay thế</p>');
+		});
+});
+</script>
+</html>

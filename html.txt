@@ -1,0 +1,149 @@
+------- chú ý -------
+
+ký hiệu note: <!--  -->
+
+-------- type of words ------
+b, strong	// đậm
+i, em		// chữ nghiêng
+u		// chữ gạch chân
+s		// chữ gạch giữa 
+
+-------- html ------
+<sup> </sup>			// mũ
+<sub> </sub>			// ngược lại ở trên
+	
+<hr>				// gạch ngang
+
+<br>				// xuống dòng
+
+<blockquote> </blockquote>	// thụt đầu dòng
+
+<img src="link" alt="label when image unload"> text	// ảnh
+
+<ol>
+	<li> </li>
+</ol>
+<ul>
+	<li> </li>
+</ul>
+
+<table border="1">
+        <tr>
+            	<th>Tên</th>
+        </tr>
+       	<tr rowspan="2">
+            	<td colspan="2"> Nguyễn Văn A </td>
+        </tr>
+</table>
+
+
+<a href="link"> text </a>		// to link 
+<a href="mailto: "> text </a> 		// to email
+<a href="javascript: "> text </a>	// to javascript
+
+<address> </address>			// địa chỉ
+
+--------- form -----
+
+có value thì ko có placeholder và ngược lại
+
+-- form
+Giá trị cần có: type, name, placeholder
+thuộc tính thêm: autofocus, readonly
+
+<form name="..." action=" function ($_SERVER["PHP_SELF"]); " method="post" enctype="multipart/form-data" > </form>
+// method (Post, Get) // Post thì không hiện trên url, Get hiện trên url
+Post: thông tin sẽ không xuất trên url
+Get: thông tin sẽ xuất trên url
+
+// action
+hàm thực thi khi tương tác form
+
+-- text
+<input type="text" name="txtName" value="text" size="10" maxlength="20" placeholder="...." autofocus readonly>	
+// autofocus khi mở web sẽ để trỏ chuột ở đó
+
+-- email
+<input type="email" name="txtEmail" value="text" size="10" maxlength="20" placeholder="...." autofocus readonly>// autofocus khi mở web sẽ để trỏ chuột ở đó
+
+-- tel
+<input type="tel" name="txtTel" value="text" size="10" maxlength="20" placeholder="...." autofocus readonly>	
+// autofocus khi mở web sẽ để trỏ chuột ở đó
+
+-- number
+<input type="number" name="txtNumber" value="text" size="10" maxlength="20" placeholder="...." autofocus readonly>
+
+-- date
+<input type="date" name="txtDate" value="text" size="10" maxlength="20" placeholder="...." autofocus readonly>
+	datetime-local	// Hiển thị bộ chọn ngày và giờ (không bao gồm múi giờ).
+	month		// Dùng để chọn tháng và năm.
+	week		// Dùng để chọn tuần trong năm.
+	time		// Hiển thị bộ chọn giờ.
+
+-- range	// thanh trượt
+<input type="range" name="txtRange" value="text" size="10" maxlength="20" placeholder="...." autofocus readonly>
+
+-- password
+<input type="password" name="txtPassword" value="your password" size="15" maxlength="30">
+
+-- textarea
+<textarea name="textarea" cols="20" rows="5" wrap="soft" readonly > text </textarea>
+
+-- checkbox
+Anh van: <input type="checkbox" name="Languages" value="En" > <br>
+Hoa: <input type="checkbox" name="Languages" value="Chz" checked > <br>
+Nhat: <input type="checkbox" name="Languages" value="Jp" > <br>
+
+// jquery
+$("input[name='Languages']:checked").each(function () {
+   let value = $(this).val();
+});
+
+-- radio (chung 1 name)
+Dog: <input type="radio" name="pet" value="-1" > <br>
+Cat: <input type="radio" name="pet" value="0" > <br>
+Bird: <input type="radio" name="pet" value="1" > <br>
+
+// jquery
+let selectedValue = $("input[name='pet']:checked").val();	//  chọn giá trị của nhóm radio
+let trueorfalse = $("input[name='pet'][value='1']").is(":checked");	// kiểm tra 1 radio nào đó có tick ko
+
+-- button
+	<input type="button" name="nameButton" value="tên Button">
+
+-- submit
+	<input type="submit" name="nameSubmit" value="tên Button">
+
+-- reset
+	<input type="reset" name="nameReset" value="tên reset">
+
+-- label
+	<label for="exampleCheckBox"> example check box</label>
+        <input type="checkbox" name="exampleCheckBox" value="exp"> example
+
+-- combobox
+	// tuỳ vào size sẽ hiện thị bấy nhiêu ra
+
+	<select name="DSSoftware" size="1">
+		<optgroup label="Multimedia">
+                        <option value="WM10">Window Media 10</option>
+                        <option value="JA9">Jet Audio 9</option>
+                </optgroup>
+               
+		<optgroup label="Operation System">
+                        <option value="W7">Windows 7 </option>
+                        <option value="W8">Windows 8 </option>
+                        <option value="W10">Windows 10 </option>
+               	</optgroup>
+
+               <option value="Office12" selected>Office 2012</option>
+     	</select>
+
+-- field set
+	<fieldset>
+               	<legend>Subject</legend>
+                
+		<input type="checkbox" name="Subjects" value="Eng">English<br>
+                <input type="checkbox" name="Subjects" value="Math" checked>Mathematics<br>
+                <input type="checkbox" name="Subjects" value="GraphTheory"> Graph Theory<br>
+       	</fieldset>

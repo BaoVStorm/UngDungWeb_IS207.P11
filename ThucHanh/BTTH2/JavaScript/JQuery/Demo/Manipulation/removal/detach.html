@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+	background: yellow;
+	margin: 6px 0;
+}
+p.off {
+	background: black;
+}
+</style>
+<script src="../../jquery.js"></script>
+</head>
+<body>
+<p>Hello</p>
+how are
+<p>you?</p>
+<button>Attach/detach paragraphs</button>
+<script>
+    var p;
+    $("button").click(function(){
+      if ( p ) {
+        p.appendTo("body");
+        p = null;
+      } else {
+        p = $("p").detach();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BTTH1_7</title>
+        <link rel="stylesheet" type="text/css" href="BTTH1_7.css">
+    </head>
+
+    <body>
+        <div id="container">
+            <h1>Phiếu đăng ký tour du lịch</h1>
+
+            <form>
+                <table id="tableTour" border="1">
+                    <tr>
+                        <td>
+                            <label for="name">Họ và tên khách</label>
+                        </td>
+                        <td>
+                            <input type="text" class="input" id="name" placeholder="Nguyễn Văn A" required>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            <label for="location">Địa chỉ</label>
+                        </td>
+                        <td>
+                            <input type="text" class="input" id="location" placeholder="abc, xyz, jqk" required>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            <label for="phone">Điện thoại</label>
+                        </td>
+                        <td>
+                            <input type="text" class="input" id="phone" placeholder="09xxxxxxxx" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="tour">Tour</label>
+                        </td>
+                        <td>
+                            <select class="input" id="tour">
+                                <option value="Hà Nội – Hạ Long – Tuần Châu"> Hà Nội – Hạ Long – Tuần Châu </option>
+                                <option value="Hà Nội – Sapa"> Hà Nội – Sapa </option>
+                                <option value="Đà Nẵng – Hội An"> Đà Nẵng – Hội An </option>
+                                <option value="Buôn Mê Thuộc – Kon Tum"> Buôn Mê Thuộc – Kon Tum </option>
+                                <option value="TP.HCM – Nha Trang"> TP.HCM – Nha Trang </option>
+                                <option value="TP.HCM – Cần Thơ – Cà Mau"> TP.HCM – Cần Thơ – Cà Mau </option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Số lượng đoàn khách</legend>
+                                <label for="adult">Người lớn</label>
+                                <input type="text" class="inputCusCount" id="adult" value="1">
+                                <label for="child">Trẻ em</label>
+                                <input type="text" class="inputCusCount" id="text" value="0">
+                            </fieldset>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="note">Ghi chú</label>
+                        </td>
+                        <td>
+                            <input type="textarea" class="input" id="note">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="button" id="button" value="Đăng ký">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

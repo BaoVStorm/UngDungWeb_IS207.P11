@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  
+  <script>
+  $(document).ready(function(){
+    
+    $(document.body).click(function () {
+      if ($("div").is(":hidden")) {
+        $("div").slideDown(3000,function(){this});
+      } else {
+        $("div").hide();
+      }
+    });
+
+  });
+  </script>
+  <style>
+  div { background:#de9a44; margin:3px; width:80px; 
+        height:40px; display:none; float:left; }
+  </style>
+</head>
+<body>
+  Click me!
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+</html>

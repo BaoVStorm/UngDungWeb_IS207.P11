@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quản Trị</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            height: 100vh;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .sidebar a {
+            color: #333;
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #e2e6ea;
+            border-radius: 5px;
+        }
+        .sidebar .dropdown-toggle::after {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h4 class="mb-4">TRANG QUẢN TRỊ</h4>
+            <div class="mb-4">
+                <input type="text" class="form-control" placeholder="Search...">
+            </div>
+            <a href="#">Quản Lý Chung</a>
+            <a href="#managementSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quản Lý</a>
+            <ul class="collapse list-unstyled" id="managementSubmenu">
+                <li><a href="#">Danh mục sản phẩm</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Phiếu đặt hàng</a></li>
+                <li><a href="#">Hóa đơn</a></li>
+            </ul>
+            <a href="#">Tài khoản</a>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content p-4">
+            <h2>Nội dung quản lý</h2>
+            <p>Phần nội dung quản lý sẽ được hiển thị ở đây.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

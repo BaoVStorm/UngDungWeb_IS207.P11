@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $("div").focusin(function(){
+    $(this).css("background-color","#FFFFCC");
+  });
+});
+</script>
+</head>
+<body>
+<div style="border: 1px solid black;padding:10px;">
+First name: <input type="text" /><br />
+Last name: <input type="text" />
+</div>
+<p>Click in the input field to get focus.</p>
+</body>
+</html>
+
+

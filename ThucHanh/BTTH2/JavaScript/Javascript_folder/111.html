@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>text javascript</title>
+
+        <link rel="stylesheet" type="text/css" href="test.css">
+        <!-- <script src="testscript.js"></script> -->
+
+        <script>
+            function person(first_name, last_name, age, sex){
+                this.first_name=first_name;
+                this.last_name=last_name;
+                this.age=age;
+                this.sex=sex;
+                this.printStats=printStats;
+            }
+
+            function printStats(){
+                document.write("Name :" + this.last_name + " " + this.first_name + "<br>" );
+                document.write("Age :"+this.age+"<br>");
+                document.write("Sex :"+this.sex+"<br>");
+            }
+        </script>
+    </head>
+
+    <body>
+        <script>
+            var int = 10;
+            var s = "Asf";
+            var float = 10.3;
+
+
+            document.writeln("<H2>Hello JavaScript</H2> " + (float + int));
+            document.write("HelloWorld " + s + "<br>");
+
+            var array = new Array(10)
+            array[0] = 0;
+            // var i  = 0
+
+            for(var i = 1; i < 10; i++) {
+                array[i] = array[i - 1] + i;
+            }
+
+            document.writeln("------------------- <br>")
+
+            for(var i = 0; i < 10; i++) {
+                document.writeln(array[i] + "<br>");
+            }
+
+            document.writeln("<hr>")
+
+            var a = new Array(10);
+
+            for(var i = 0; i < 10; i++) {
+                a[i] = new Array(20);
+            }   
+
+            for(var i = 0; i < 10; i++) {
+
+                for(var j = 0; j < 20; j++) {
+                    a[i][j] = i + j;
+
+                    document.write(a[i][j] + "\t");
+                }
+                    
+                document.write("<br>");
+            }
+
+            aa = "non";
+
+            if(aa > "mon")
+                document.write("today is monday");
+
+            document.write("<hr>");
+
+            var b = 50, c = 100;
+
+            document.write("eval result: ");
+            document.write(eval("array[1] + a[3][3] + 5") + "<br>")
+
+            document.write("<hr>");
+
+            per = new person("Thuy", "Dau Bich", "23", "Female");
+            per.printStats();
+        </script>
+
+        <!-- --------------------------------------------------------- -->
+        <hr> 
+
+        <script>
+            function myFunction(a){
+                var x;
+                var txt="";
+                var person={Ho:"Nguyen Van",Ten:"Teo",age:27};
+                
+                for (x in person){
+                    txt=txt + person[x];
+                }
+                
+                document.getElementById("demo").innerHTML=txt + " " + a;
+            }
+        </script>
+
+        <p>Nhấn nút để hiển thị tên</p>
+        <button onclick="myFunction('asdf')">Lấy thông tin</button>
+        <p id="demo">day la hien thi..</p>
+
+        <hr>
+        <p>with function</p>
+        <script>
+            with (document){
+                write("This is an exemple of the things that can be done <br>");
+                write("With the with statment. <br>");
+                write("This can really save some typing");
+            }
+        </script>
+        
+        <hr>
+        <p>Event switch page</p>
+        <input type="button" name="Button1" value="OpenSesame!" onClick="window.open('mydoc.html');">
+
+    </body>
+</html>

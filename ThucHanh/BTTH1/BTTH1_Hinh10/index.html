@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quản Trị</title>
+    <link rel="stylesheet" type="text/css" href="BTTH1_10.css">
+
+    <script>
+        function toggleMenu() {
+            var submenu = document.getElementById("managementSubmenu");
+            if (submenu.style.display === "block") {
+                submenu.style.display = "none";
+            } else {
+                submenu.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h4>TRANG QUẢN TRỊ</h4>
+        <input type="text" placeholder="Search...">
+        <a href="#">Quản Lý Chung</a>
+        <div class="toggle" onclick="toggleMenu()">Quản Lý</div>
+        <div class="submenu" id="managementSubmenu">
+            <a href="#">Danh mục sản phẩm</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Phiếu đặt hàng</a>
+            <a href="#">Hóa đơn</a>
+        </div>
+        <a href="#">Tài khoản</a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h2>Nội dung quản lý</h2>
+        <p>Phần nội dung quản lý sẽ được hiển thị ở đây.</p>
+    </div>
+</body>
+</html>

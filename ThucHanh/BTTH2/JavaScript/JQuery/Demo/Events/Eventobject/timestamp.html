@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(e){
+    $("span").text(e.timeStamp);
+  });
+});
+</script>
+</head>
+<body>
+<p>The click event for the button below occurred <span>unknown</span> milliseconds after January 1, 1970.</p>
+<button>Click me</button>
+</body>
+</html>
+

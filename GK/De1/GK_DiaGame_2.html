@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KTGK_De1</title>
+
+        <!-- Tải thư viện jquery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+        <style>
+            html {
+                /* Căn giữa chìu dọc và chìu ngang */
+                display: flex; 
+                justify-content: center;
+                align-items: center;
+            }
+
+            #centerContainer {
+                /* Xắp xếp các phần tử theo chìu dọc */
+                display: flex;
+                flex-direction: column;
+                /* vì sắp xếp theo chìu dọc nên mới có thể căn giữa, 
+                nếu không thì lệnh "align-items: center" sẽ không thực hiện được vì mặc định xắp sếp theo chìu ngnag*/
+                
+                align-items: center;
+            }
+
+            /* CSS input */
+
+            #inputContainer {
+                /* Xắp xếp các phần tử theo chìu dọc */
+                display: flex;
+                flex-direction: column;   
+                /*  */
+                width: 500px;   
+            }   
+
+            #inputContainer label {
+                /*margin: top right bottom left */
+                margin: 20px 0px 8px 0px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            #inputContainer input {
+                padding: 10px;
+                font-size: 15px;
+
+                border-radius: 8px;
+                border-color:rgb(121, 120, 120);
+            }
+
+            /* CSS Body */
+
+            #bodyContainer {
+                margin: 40px 100px 0px;
+
+                /* 2 lệnh này giúp sắp xếp các thành phần con (các đĩa game) thành 1 hàng và xuống hàng khi quá hàng */
+                display: flex;
+                flex-wrap: wrap;
+                /*  */
+
+                /* Căn giữa các thành phần con (đĩa game) */
+                justify-content: center;
+
+                /* text-align: center; */
+                gap: 0px 50px;
+            }
+
+            .product {
+                padding: 20px 25px;   
+                
+                /* border: 2px solid rgb(172, 172, 172);
+                border-radius: 10px;
+                box-shadow: 10px 10px 15px rgba(146, 146, 146, 0.5); */
+
+                width: 250px;
+
+                display: flex;
+                flex-direction: column;   
+            
+                text-align: center;
+            
+                font-size: 20px;
+            }
+
+            /* CSS Từng đĩa */
+
+            .nameProduct {
+                margin: 15px 0px 5px;
+                font-weight: bold;
+                font-size: 22px;
+            }
+
+            .infoProduct {
+                margin: 5px;
+            }
+
+            .selectProduct{
+                margin: 5px 0px;
+            }
+
+            .selectProduct input[type="number"] {
+                width: 40px;
+                font-size: 20px;
+            }
+            
+            /* Button */
+            #cashButton {
+                margin-top: 20px;
+                margin-left: 15%;
+                padding: 10px 15px;
+                font-size: 18px;
+
+                background-color: rgb(5, 165, 26);
+                border: 0px;
+                border-radius: 8px;
+                color:aliceblue;
+            }
+
+            #cashButton:hover {
+                background-color: rgb(1, 139, 20);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="centerContainer">
+            <form id="inputContainer" >
+                <label for="inputName">Họ tên khách hàng</label> 
+                <input type="text" id="inputName" placeholder="Nguyễn Văn C"> 
+                <label for="inputPosition">Địa chỉ liên hệ/ Số điện thoại</label> 
+                <input type="text" id="inputPosition" placeholder="TP.HCM / 09xxxxxxxx">
+            </form>
+
+
+            <div id="bodyContainer" >
+                <div class="product" >
+                    <img src="/De1/image/gow5.png" alt="gow">
+                    
+                    <p class="nameProduct"> God OF WAR</p>
+                    
+                    <p class="infoProduct">
+                        <span>NSX: </span>
+                        <span class="NSX"> Sony's Santa Monica Studio</span>
+                    </p>
+                    
+                    <p class="infoProduct"> 
+                        <span>Giá: </span>
+                        <span class="gia">1200000</span>
+                    </p>
+    
+                    <form class="selectProduct">
+                        <label for="count">Số lượng:</label>
+                        <input type="number" class="count" value="1">
+    
+                        <label for="buy">Chọn mua</label>
+                        <input type="checkbox" class="buy">
+                    </form> 
+                </div>
+
+                <!-- Phần sau này giống y trên -->
+
+                <div class="product" >
+                    <img src="/De1/image/gow5.png" alt="gow">
+                    
+                    <p class="nameProduct"> God OF WAR</p>
+                    
+                    <p class="infoProduct">
+                        <span>NSX: </span>
+                        <span class="NSX"> Sony's Santa Monica Studio</span>
+                    </p>
+                    
+                    <p class="infoProduct"> 
+                        <span>Giá: </span>
+                        <span class="gia">1200000</span>
+                    </p>
+    
+                    <form class="selectProduct">
+                        <label for="count">Số lượng:</label>
+                        <input type="number" class="count" value="1">
+    
+                        <label for="buy">Chọn mua</label>
+                        <input type="checkbox" class="buy">
+                    </form> 
+                </div>
+
+                <div class="product" >
+                    <img src="/De1/image/gow5.png" alt="gow">
+                    
+                    <p class="nameProduct"> God OF WAR</p>
+                    
+                    <p class="infoProduct">
+                        <span>NSX: </span>
+                        <span class="NSX"> Sony's Santa Monica Studio</span>
+                    </p>
+                    
+                    <p class="infoProduct"> 
+                        <span>Giá: </span>
+                        <span class="gia">1200000</span>
+                    </p>
+    
+                    <form class="selectProduct">
+                        <label for="count">Số lượng:</label>
+                        <input type="number" class="count" value="1">
+    
+                        <label for="buy">Chọn mua</label>
+                        <input type="checkbox" class="buy">
+                    </form> 
+                </div>
+
+                <div class="product" >
+                    <img src="/De1/image/gow5.png" alt="gow">
+                    
+                    <p class="nameProduct"> God OF WAR</p>
+                    
+                    <p class="infoProduct">
+                        <span>NSX: </span>
+                        <span class="NSX"> Sony's Santa Monica Studio</span>
+                    </p>
+                    
+                    <p class="infoProduct"> 
+                        <span>Giá: </span>
+                        <span class="gia">1200000</span>
+                    </p>
+    
+                    <form class="selectProduct">
+                        <label for="count">Số lượng:</label>
+                        <input type="number" class="count" value="1">
+    
+                        <label for="buy">Chọn mua</label>
+                        <input type="checkbox" class="buy">
+                    </form> 
+                </div>
+
+                <div class="product" >
+                    <img src="/De1/image/gow5.png" alt="gow">
+                    
+                    <p class="nameProduct"> God OF WAR</p>
+                    
+                    <p class="infoProduct">
+                        <span>NSX: </span>
+                        <span class="NSX"> Sony's Santa Monica Studio</span>
+                    </p>
+                    
+                    <p class="infoProduct"> 
+                        <span>Giá: </span>
+                        <span class="gia">1200000</span>
+                    </p>
+    
+                    <form class="selectProduct">
+                        <label for="count">Số lượng:</label>
+                        <input type="number" class="count" value="1">
+    
+                        <label for="buy">Chọn mua</label>
+                        <input type="checkbox" class="buy">
+                    </form> 
+                </div>
+
+                <div class="product" >
+                    <img src="/De1/image/gow5.png" alt="gow">
+                    
+                    <p class="nameProduct"> God OF WAR</p>
+                    
+                    <p class="infoProduct">
+                        <span>NSX: </span>
+                        <span class="NSX"> Sony's Santa Monica Studio</span>
+                    </p>
+                    
+                    <p class="infoProduct"> 
+                        <span>Giá: </span>
+                        <span class="gia">1200000</span>
+                    </p>
+    
+                    <form class="selectProduct">
+                        <label for="count">Số lượng:</label>
+                        <input type="number" class="count" value="1">
+    
+                        <label for="buy">Chọn mua</label>
+                        <input type="checkbox" class="buy">
+                    </form> 
+                </div>
+
+                <div class="product" >
+                    <img src="/De1/image/gow5.png" alt="gow">
+                    
+                    <p class="nameProduct"> God OF WAR</p>
+                    
+                    <p class="infoProduct">
+                        <span>NSX: </span>
+                        <span class="NSX"> Sony's Santa Monica Studio</span>
+                    </p>
+                    
+                    <p class="infoProduct"> 
+                        <span>Giá: </span>
+                        <span class="gia">1200000</span>
+                    </p>
+    
+                    <form class="selectProduct">
+                        <label for="count">Số lượng:</label>
+                        <input type="number" class="count" value="1">
+    
+                        <label for="buy">Chọn mua</label>
+                        <input type="checkbox" class="buy">
+                    </form> 
+                </div>
+
+                <div class="product" >
+                    <img src="/De1/image/gow5.png" alt="gow">
+                    
+                    <p class="nameProduct"> God OF WAR</p>
+                    
+                    <p class="infoProduct">
+                        <span>NSX: </span>
+                        <span class="NSX"> Sony's Santa Monica Studio</span>
+                    </p>
+                    
+                    <p class="infoProduct"> 
+                        <span>Giá: </span>
+                        <span class="gia">1200000</span>
+                    </p>
+    
+                    <form class="selectProduct">
+                        <label for="count">Số lượng:</label>
+                        <input type="number" class="count" value="1">
+    
+                        <label for="buy">Chọn mua</label>
+                        <input type="checkbox" class="buy">
+                    </form> 
+                </div>
+            </div>
+        </div>
+        
+        <button id="cashButton">Thanh Toán</button>
+    </body>
+
+    <!-- jQuery and simple javascript -->
+    <script>
+        var button = $("#cashButton");
+        button.click(function actionButton(){
+            var myWindow = window.open("", "_blank"); //javascript
+
+            var nameCus = $("#inputName").val()
+            var locationCus = $("#inputPosition").val();
+
+            var billHtml = `
+                    <div id="header"> <h3>Hoá đơn</h3> </div>
+                    <table>
+                        <tr>
+                            <td><b>Họ tên khách hàng: </b></th>
+                            <td>${nameCus}</td>
+                        </tr>
+                        <tr>
+                            <th><b>Dịa chỉ liên hệ/Số điện thoại: </b></th>
+                            <td>${locationCus}</td>
+                        </tr>
+                    </table>`;
+
+            var listGame = $(".product");
+            var sum = 0;
+
+            billHtml += "<table>";
+            billHtml += `
+                <tr>
+                    <th>Dĩa game</th>
+                    <th>SL</th>
+                    <th>Đơn giá</th>
+                    <th>Thành Tiền</th>
+                </tr>`;
+
+            listGame.each(function () {
+                const checkbox = $(this).find("input[type='checkbox']");
+                if(checkbox.is(":checked")) {
+                    const gameName = $(this).find(".nameProduct").html();
+                    const quantity = $(this).find("input[type='number']").val();
+                    const price = $(this).find(".gia").html();
+
+                    billHtml += `
+                        <tr>
+                            <td>${gameName}</td> 
+                            <td>${quantity}</td>
+                            <td>${price}</td>
+                            <td>${price * quantity}</td>
+                        </tr>`;
+                    
+                    sum += quantity * price;
+                }
+            });
+            billHtml += "</table>";
+
+            billHtml += `
+                <table>
+                    <td><p><b>Tổng tiền:</b></p></td>
+                    <td><b>${sum} đ</b></td>
+                </table>`;
+
+            myWindow.document.write(billHtml); // javascript
+        });
+    </script>
+
+    
+</html>

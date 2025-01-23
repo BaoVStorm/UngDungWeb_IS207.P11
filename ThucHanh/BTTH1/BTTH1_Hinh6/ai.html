@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu đăng ký tham gia dự thưởng</title>
+    <link rel="stylesheet" type="text/css" href="ai.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Phiếu đăng ký tham gia dự thưởng</h2>
+
+        <form>
+            <table>
+                <tr>
+                    <td><label for="name">Họ và tên</label></td>
+                    <td><input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Địa chỉ</label></td>
+                    <td><input type="text" id="address" name="address" placeholder="abc, xyz, jqk" required></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Điện thoại</label></td>
+                    <td><input type="text" id="phone" name="phone" placeholder="09xxxxxxxx" required></td>
+                </tr>
+                <tr>
+                    <td><label>Phái</label></td>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="Nam" required checked>
+                        <label for="male" style="display: inline;">Nam</label>
+                        <input type="radio" id="female" name="gender" value="Nữ" required>
+                        <label for="female" style="display: inline;">Nữ</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="product">Sản phẩm</label></td>
+                    <td>
+                        <select id="product" name="product" required>
+                            <option value="Iphone 11 Pro Max" selected>Iphone 11 Pro Max</option>
+                            <option value="Samsung Galaxy Note 20">Samsung Galaxy Note 20</option>
+                            <option value="Xiaomi Redmi K30">Xiaomi Redmi K30</option>
+                            <option value="OPPO A53">OPPO A53</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="guess">Số dự đoán</label></td>
+                    <td>
+                        <select id="guess" name="guess" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected>5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Đăng ký">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

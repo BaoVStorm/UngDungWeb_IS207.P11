@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $("input").focus(function(){
+    $("input").css("background-color","#FFFFCC");
+  });
+  $("input").blur(function(){
+    $("input").css("background-color","#D6D6FF");
+  });
+});
+</script>
+</head>
+<body>
+Enter your name: <input type="text" />
+<p>Click in the input field to get focus, and outside the input field to lose focus (blur).</p>
+</body>
+</html>
+

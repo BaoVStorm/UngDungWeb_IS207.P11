@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+div {
+	border: 2px solid blue;
+}
+p {
+	background: yellow;
+	margin: 4px;
+}
+</style>
+  <script src="../../jquery.js"></script>
+  </head>
+  <body>
+<button>wrap/unwrap</button>
+<p>Hello
+<h1>Tag h1</h1>
+</p>
+<p>cruel</p>
+<p>World</p>
+<script>
+$("button").toggle(function(){
+  $("p").wrap("<div></div>");
+}, function(){
+  $("p").unwrap();
+});</script>
+</body>
+</html>

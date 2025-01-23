@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $(":checked").wrap("<span style='background-color:red' />");
+});
+</script>
+</head>
+<body>
+
+<form action="">
+<input type="checkbox" name="vehicle" value="Bike"><br>
+I have a car:
+<input type="checkbox" name="vehicle" value="Car" checked="checked"><br>
+I have an airplane:
+<input type="checkbox" name="vehicle" value="Airplane"><br>
+<input type="submit">
+</form>
+</body>
+</html>

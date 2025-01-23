@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>demo jquery</title>
+	<style>
+	p{
+		margin: 15px; font-size:20px;
+		}
+		.colored{color:#3C30;
+		font-size:36px}
+		
+		.highlight{background-color:#9FF}
+		
+		em{
+		color:blue; font-weight:bold;
+		}
+		
+		div{
+			color:red;
+			
+			}
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+	<p>once there was a<em title="huge, gigantic" id="123"> large</em> dinosaur...</p>
+	the title of the emphasis is :
+	<div></div>
+	
+	<script>
+		var title=$("em").attr("title");
+		$("div").text(title);
+	</script>
+			
+	<p>SAY YOU</p>
+	<p>AND</p>
+	<p>SAY ME</p>
+
+	<script>	
+		$("p:last").addClass("colored highlight");
+	</script>
+
+</body>
+</html>

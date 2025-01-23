@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        alert($("p").hasClass("intro"));
+      });
+    });
+  </script>
+
+  <style type="text/css">
+    .intro {
+      font-size:120%;
+      color:red;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>This is a heading</h1>
+  <p class="intro">This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+  <button>Does any p element have an "intro" class?</button>
+
+</body>
+
+</html>

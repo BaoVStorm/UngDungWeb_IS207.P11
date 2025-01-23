@@ -1,0 +1,520 @@
+------- chú ý -------
+không được dùng ` `
+
+<?= $aa ?>
+<?php echo $aa; ?>
+
+có thể chèn biến php bằng cách:
+	"Name: $name"	//  Name: VStorm 	ở đây chèn biến name
+	"Age = '$age'"	//  Age = 'VStorm'	
+
+$html_table = "
+ aa".$a."
+ bbb";
+
+$r["MAHD"] // phải đúng hoa và thường
+
+ký hiệu note: //
+---------------------
+
+include "hinhtron.php";
+
+<?php echo "Hello";
+
+//gọi biến
+$keyword = 1;
+
+---- Chuyển Kiểu ----
+$string = "123";
+
+// int
+$intValue = (int)$string;
+hoặc
+$intValue = intval($string);
+
+// float, double
+$string = "123.45";
+$floatValue = (float)$string;
+hoặc
+$floatValue = floatval($string);
+
+// string
+$float = 123.45;
+$stringValue = (string)$int;
+hoặc
+$stringValue = strval($float);
+
+---- toán tử ----
+// mũ
+echo 2 ** 3;   // 8
+
+// giống
+==  
+    5 == "5"      // true
+    0 == false    // true
+    null == false // true
+===   
+    5 === "5"      // false
+    0 === false    // false
+    null === false // false
+
+// khác
+!=
+    5 != "5"      // false
+    0 != false    // false
+    null != false // false
+!==   
+    5 !== "5"      // true
+    0 !== false    // true
+    null !== false // true 
+
+// luận lý
+    if(true && (false || true))  // true
+
+---- hàm số ----
+<?php
+   pi(); 				// return 3.1415926535898
+   min(0, 150, 30, 20, -8, -200); 	// return -200
+   max(0, 150, 30, 20, -8, -200); 	// return 150
+   abs(-6.7); 				// return 6.7
+   sqrt(64);  				// return 8
+   log(2);    				// return 1
+   log10(10); 				// return 1
+   round(0.60); 			// return 1
+   round(0.49); 			// return 0
+   floor(1.1) 				// return 1
+   ceil(1.1) 				// return 2
+   rand();    				// [0, 1]
+   rand(10, 100):
+   number_format(0.5689,2); 		// return 0.57
+?>
+
+---- hàm string ----
+// nối string
+"classes/".$className.".php"
+$String .= "thêm chuỗi này vào biến";
+
+// kiểm tra xâu có rỗng hay không
+empty($string)
+
+// xuất ra chiều dài xâu
+strlen($string);
+
+// gọn dấu space
+trim($string) 
+
+// đếm số lượng từ
+str_word_count($string) 
+
+// đảo ngược xâu
+strrev($string)
+
+// tìm vị trí xâu
+strpos("Hello world!","world");  // 6
+
+// thay thế xâu
+str_replace("world", "UIT", "Hello world!");  // Hello UIT!
+
+// đổi lại kích thước xâu, nếu lớn hơn thì thêm ký tự vào
+str_pad("Hi", 5, ".");  // Hi...
+
+// copy xâu
+substr(string, start, length)
+ví dụ: 
+substr("Hello world", 6); // world
+
+// so sánh xâu
+strcasecmp("Hello world!", "HELLO WORLD!");  // không phân biệt hoa và thường
+   = 0	// giống nhau
+   < 0	// chuỗi 2 lớn hơn
+   > 0  // chuỗi 1 lớn hơn 
+
+// chuyển in hoa hay in thường
+strtolower("hello WORLD");
+strtoupper("hello WORLD");
+
+-------- hàm --------
+// xuất biến
+printf(“0.2f<br>”, $a);
+echo number_format($a, 2); 
+
+// kiểm tra biến có tồn tại không
+isset($variable)
+
+	// kiểm tra một biến có rỗng hay không
+	empty($variable)
+
+// huỷ 1 biến
+unset($variable)
+
+// Định nghĩa DBHOST là localhost
+define("DBHOST", "localhost");
+
+// switch case
+switch ($type) {
+    case "POST":
+        return true;
+        break;
+    default:
+        return false;
+        break;
+}
+
+// xuất thông tin mảng
+var_dump($error_form);
+
+------------ array ----------
+// khai báo
+$list_form = array();   
+$error_form = array("tel_email", "username", "password");
+$error_form = array("tel_email"=>5, "username"=>3, "password"=>8);  
+
+// xuất mảng
+echo $array[0];
+
+$error_form = array("tel_email"=>5, "username"=>3, "password"=>8);  
+echo $array["tel_email"];
+
+// for
+for ($i=0; $i<count($a); $i++) {
+	echo $a[$i]."<br>";
+}
+
+foreach ($error_form as $name) {
+    $list_form[] = $name."Tên";
+}
+
+$error_form = array("tel_email"=>5, "full_name"=>3, "username"=>3, "password"=>8);  
+foreach ($lerror_form as $name => $minLength) {
+    $list_form[] = $name."tối thiểu {$minLength}";
+}
+
+--- hàm mảng ---
+// đếm số lượng phần tử mảng
+count($a)
+
+// thêm phần tử vào cuối mảng
+array_push(array, elements)
+
+// xoá phần tử cuối của mảng
+array_pop(array)
+
+// thêm phần tử vào đầu mảng
+array_unshift(array, elements)
+
+// Xoá phần tử đầu ra khỏi mảng
+array_shift(array)
+
+// cắt mảng 
+$array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+array_slice($array, $offset, $length, $preserve_keys);
+	$result = array_slice($array, 3); 	// Output: [4, 5, 6, 7, 8, 9]
+	$result = array_slice($array, 3, 4);	// Output: [4, 5, 6, 7]
+	$result = array_slice($array, -4, 2);	// Output: [6, 7]
+
+// xắp sếp mảng
+sort(array, flag)    	// asc
+rsort()   		// desc
+asort()   		// asc theo value
+ksort()   		// asc theo key
+arsort()  		// desc theo value
+krsort()  		// desc theo key
+
+array = [3, "20", 15, "5"];
+flag = {sort_regular 	// (mặc định) sort theo giá trị bao gồm string và num 	// 3, "5", 15, "20"
+	, sort_numeric  // chuyển thành số rồi sort 				// 3, "5", 15, "20"
+	, sort_string	// chuyển thành string rồi sort 			// "20", "3", "5", 15
+	, sort_locale_string} 
+
+// min, max
+min($a)
+max($a)
+
+// gộp 2 mảng lại
+$error_form = array_merge($error_form, check_error_form($name_form));
+
+------------ date, time ----------
+--- date ---
+date("định dạng")
+date("g:m:s a d-m-y"); // 2:10:28 am 27-10-14
+
+// lấy ngày hiện tại
+$m = getdate(); 
+["seconds"]	Chỉ số lấy giá trị giây
+["minutes"]	Chỉ số lấy giá trị phút
+["hours"]	Chỉ số lấy giá trị giờ
+["mday"]	Ngày trong tháng
+["wday"]	Ngày trong tuần 0 -> chủ nhật,..
+["weekday"]	Thứ trong tuần
+["mon"]		Tháng 1-12
+["month"]	Tháng dạng chuỗi
+["year"]	Năm
+["yday"]	Ngày trong năm
+
+echo $m["weekday"] // Monday
+
+--- time ---
+long time()
+echo time();  // 1414296069
+
+------------------- function -----------------------
+// function và tham chiếu
+
+function escape(& $string) {
+    return htmlentities($string, ENT_QUOTES);
+}
+
+// biến global
+function doublevalue($var=10) {
+   global $temp;
+   $temp = $var * 2;
+}
+
+-----------------------------------------------
+<?php 
+    if(!isset($keyword)) 
+        $keyword="Test keyword";
+	
+    $title="title web";
+?>
+
+-----------------------------------------------
+gọi lại biến php
+<?= $keyword; ?>
+
+chú ý: 
+	content= "<?= $keyword; ?>
+	<title> <?= $title; ?> </title>
+-----------------------------------------------
+<?php
+    $title="Instagram | Login";
+    require "shared/header.php";
+?>
+
+-------------------- NHẬN SỰ KIỆN FORM --------------------
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $conn = new mysqli("localhost", "root", "", "ck_xe");
+    $stmt = $conn->prepare("INSERT INTO xe (soxe, tenxe, hangxe, socho, namsx, dgthue, tinhtrang) VALUES (?, ?, ?, ?, ?, ?, 0)");
+    $stmt->bind_param("issiid", $_POST['cau1_maxe'], $_POST['cau1_tenxe'], $_POST['cau1_hangxe'], $_POST['cau1_socho'], $_POST['cau1_namsx'], $_POST['cau1_dgthue']);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
+}
+
+-------------------- DATABASE (MySQLi) ---------------------
+---- Select ----
+$rs = $conn->query("SELECT * FROM products WHERE id = ?");
+
+while ($r = $rs->fetch_assoc()) {
+    echo $row["rol1"];
+}
+
+---- Insert, Delete, Update ----
+
+$conn->query("INSERT INTO products (name, price, description) VALUES ('$name', '$price', '$description')");
+// $conn->query("DELETE FROM products WHERE name = '$name' AND price = '$price' AND description = '$description'");
+// $conn->query("UPDATE products SET name = '$name', price = '$price' WHERE description = '$description'");  // $stmt->affected_rows > 0
+
+---- exception ----
+INSERT INTO ngay (homnay) VALUES (CURDATE());	// chỉ ngày
+INSERT INTO ngay (homnay) VALUES (NOW());	// ngày và thời gian
+
+---- form mysql ----
+SELECT column1, column2, ..., aggregate_function(column_name)
+FROM table_name
+WHERE condition
+GROUP BY column_name
+HAVING condition	// lọc các giá trị của group by
+ORDER BY column_name [ASC|DESC]
+LIMIT number_of_rows
+OFFSET skip_number_of_rows;
+
+// delete with join
+DELETE table_name
+FROM table_name
+JOIN other_table
+ON table_name.column_name = other_table.column_name
+WHERE condition;
+
+------------------- class -----------------------
+class SV{
+   private $mssv;
+   private $ten;
+   private $dtb;
+
+   public function SV() {
+      $this->mssv = '22520124';
+      $this->ten = "Tran Vu Bao";
+      $this->dtb = 9.9;
+   }
+
+   public function __construct($mssv, $ten, $dtb) {
+      $this->mssv = $mssv;
+      $this->ten = $ten;
+      $this->dtb = $dtb;
+   }
+
+   public function Set($ms, $t, $d) {
+      $this->mssv = $ms;
+      $this->ten = $t;
+      $this->dtb = $d;
+   }
+
+   public function __destruct() {
+      echo "Destruct duoc goi";
+   }
+
+   public function XuatThongTin() {
+      echo "SV";
+   }
+}
+
+$sv1 = new SV();
+$sv1->Set("001","Nguyễn Xuân Tú",9.5);
+
+-- kế thừa
+class TanSV extends SV {
+   public function XuatThongTin() {
+      echo "SV";
+   }
+}
+
+$b=new TanSV();
+$b->Ve();
+
+-----------------------------------------------
+// lệnh này dùng để chuyển đến trang khác (cụ thể là location)
+header("location: ".$location);
+exit(); // dừng chương trình sau khi chuyển hướng
+
+-------------------------------- superglobal variable --------------------------------
+// kiểm tra rỗng trên các superglobal variable
+// nếu có phương thức POST sẽ false, ngược lại sẽ true 
+empty($_POST)
+
+// Lấy thông tin của 1 input hay form, ví dụ: $_POST["password"]
+$_POST[$item]
+
+// Lấy thông tin của 1 input hay form, ví dụ: $_GET["password"]
+$_GET[$item]
+
+-------- $_SERVER --------
+ví dụ: http://example.com/folder/page.php?id=10&name=John
+
+// lấy thư mục hiện tại đang thực thi, ví dụ: /folder/page.php
+$_SERVER["PHP_SELF"]
+
+// Lấy tên miền. ví dụ: example.com
+$_SERVER['HTTP_HOST'];
+
+// Lấy đường dẫn, ví dụ: /folder/page.php?id=10&name=John
+$_SERVER['REQUEST_URI'];
+
+// Xác định giao thức, nếu trang đang chạy trên HTTPS thì giá trị sẽ là "on".
+$_SERVER['HTTPS']
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+
+// Để lấy chuỗi tham số truy vấn từ URL, ví dụ: id=10&name=John
+$_SERVER['QUERY_STRING']
+
+// Nhận sự kiện từ form
+$_SERVER["REQUEST_METHOD"] == "POST" // or Get
+
+---------------------------
+// này khởi tạo trên init
+session_start(); // dùng để load $_SESSION
+
+// load id mới
+session_regenerate_id(true);
+// sử dụng session
+$_SESSION["name"] = "VStorm"
+
+-------------------------------- superglobal function --------------------------------
+// lưu nội dung in ra trình duyệt vào bộ đệm, xuất ra thông tin khi gọi 1 số lệnh cụ thể
+ob_start();
+
+// set múi giờ
+date_default_timezone_set("Asia/Ho_Chi_Minh");
+
+// Lưu và truy cập thông tin của người dùng trong phiên làm việc hiện tại
+// ví dụ: Dùng để quản lý đăng nhập người dùng hoặc giỏ hàng trong một trang web.
+session_start(); // dùng để load $_SESSION
+session_regenerate_id(true); // load id mới
+
+define("WWW_ROOT", "http://localhost/testproject/");
+
+require_once "functions.php";
+
+// tự động load tất cả các thư mục trong 1 path nào đó
+spl_autoloaf_register(function ($className){
+    require_once "classes/".$className.".php";
+});
+
+// đổi ký tự thành mã an toàn, tránh việc tấn công XSS
+return htmlspecialchars($string);
+return htmlentities($string, ENT_QUOTES);
+
+---------------------------------------------------------- Để làm đồ án ----------------------------------
+// xuất thông tin mảng
+var_dump($error_form);
+
+// class with static
+<?php
+class Redirect {
+    public static function to($location = null) {
+        if($location) {
+            header("location: ".$location);
+            // dừng chương trình sau khi chuyển hướng
+            exit();
+        }
+    }
+}
+
+-------------------- DATABASE (MySQLi) ---------------------
+---- Select ----
+// Tạo kết nối đến cơ sở dữ liệu
+$conn = new mysqli("localhost", "username", "password", "database");
+
+// Chuẩn bị câu truy vấn với tham số
+$stmt = $conn->prepare("SELECT * FROM products WHERE id = ?");
+
+// Gắn giá trị cho tham số bằng "i"
+$id = 123;
+$stmt->bind_param("i", $id);
+
+// Thực thi truy vấn
+$stmt->execute();
+
+// Lấy kết quả
+$result = $stmt->get_result();
+while ($row = $result->fetch_assoc()) {
+    // nội dung từng dòng
+    print_r($row["rol1"]);
+}
+
+// Đóng câu truy vấn và kết nối
+$stmt->close();
+$conn->close();
+
+// i	Integer (số nguyên)	INTEGER
+// d	Double (số thực)	DOUBLE
+// s	String (chuỗi ký tự)	VARCHAR, TEXT
+// b	Blob (dữ liệu nhị phân)	BLOB
+
+---- Insert, delete, update ----
+$conn = new mysqli("localhost", "username", "password", "database");
+
+$stmt = $conn->prepare("INSERT INTO products (name, price, description) VALUES (?, ?, ?)");
+// $stmt = $conn->prepare("DELETE FROM products WHERE name = ? AND price = ? AND description = ?");
+// $stmt = $conn->prepare("UPDATE products SET name = ?, price = ? WHERE description = ?");  // $stmt->affected_rows > 0
+
+$name = "Product A";
+$price = 99.99;
+$description = "Mô tả sản phẩm";
+$stmt->bind_param("sds", $name, $price, $description);
+
+$stmt->execute(); // if
+
+$stmt->close();
+$conn->close();

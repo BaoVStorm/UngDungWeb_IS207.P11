@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>val()2</title>
+
+        <style>
+            html {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            p {
+                color: red;
+            }   
+
+            b {
+                color: black;
+            }
+        </style>
+
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+    </head>
+
+    <body>
+        <p></p>
+
+        <select name="name" class="select" id="name">
+            <option value="Vu Bao">Vu Bao</option>
+            <option value="Ngoc Anh" selected="selected">Ngoc Anh</option>
+        </select>
+
+        <select name="adj" class="select" id="adj" multiple="multiple">
+            <option value="de thuong">de thuong</option>
+            <option value="cute">cute</option>
+            <option value="dang iu" selected="selected">dang iu</option>
+        </select>
+
+        <script>
+            $("select").change(function change() {
+                var nameValue = $("#name").val();
+                var adjValue = $("#adj").val() || [];
+
+                $input = $("p");
+
+                $input.html("<b>Ban </b>" + nameValue + "<b> bi </b>" + adjValue.join(', '));
+            }).change();
+        </script>
+    </body>
+</html>

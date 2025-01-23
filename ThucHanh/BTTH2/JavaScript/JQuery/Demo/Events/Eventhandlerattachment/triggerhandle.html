@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $("input").select(function(){
+    $("input").after(" Input select event occured!");
+  });
+  $("button").click(function(){
+    $("input").triggerHandler("select");
+  });
+});
+</script>
+</head>
+<body>
+<input type="text" name="FirstName" value="Hello World" />
+<br />
+<button>Activate the select event for the input field.</button>
+<p>Notice that, unlike the trigger() method, the triggerHandler() method does not cause the default behavior of the event to occur (The text is not marked).</p>
+</body>
+</html>
+

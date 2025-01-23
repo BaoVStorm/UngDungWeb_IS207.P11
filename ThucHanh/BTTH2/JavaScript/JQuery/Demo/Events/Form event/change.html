@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $(".field").change(function(){
+    $(this).css("background-color","#D6D6FF");
+  });
+});
+</script>
+</head>
+<body>
+<p>When a field has been changed, it will change background color.</p>
+Enter your name: <input class="field" type="text" />
+<p>Car:
+<select class="field" name="cars">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="fiat">Fiat</option>
+<option value="audi">Audi</option>
+</select>
+</p>
+</body>
+</html>
+

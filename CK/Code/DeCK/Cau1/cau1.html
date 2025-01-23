@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Câu 1</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    
+        <style>
+            form{
+                display: flex;
+                flex-direction: column;
+                width: 150px;
+                gap: 5px;
+            }
+
+            form input{
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Thêm xe</h1>
+        <form>
+            <span>Mã xe</span>
+            <input type="text" placeholder="51E-xxx.xx" name="MaXe" id="cau1_maxe">
+            <span>Tên Xe</span>
+            <input type="text" placeholder="Forester" name="TenXe" id="cau1_tenxe">
+            <span>Hãng xe</span>
+            <input type="text" placeholder="Subaru" name="HangXe">
+            <span>Số chỗ</span>
+            <input type="number" placeholder="5" name="SoCho">
+            <span>Năm Sản Xuất</span>
+            <input type="number" placeholder="2022" name="NamSX">
+            <span>Đơn giá thuê</span>
+            <input type="number" placeholder="1000000" name="DonGiaThue">
+
+            <input type="button" onclick="addXe()" value="Thêm">
+        </form>
+
+    </body>
+</html>
+
+<script>
+    function addXe() {
+        var MaXe = $("#cau1_maxe").val();
+        var TenXe = $("#cau1_tenxe").val();
+        var HangXe = $("input[name='HangXe']").val();
+        var SoCho = $("input[name='SoCho']").val();
+        var NamSX = $("input[name='NamSX']").val();
+        var DonGT = $("input[name='DonGiaThue']").val();
+
+        var url = "addXe.php";
+        $.post(url, {
+                maxe: MaXe,
+                tenxe: TenXe,
+                hangxe: HangXe,
+                socho: SoCho, 
+                namsx: NamSX,
+                dongt: DonGT
+            }, function(data, status) {
+                // console.log(data);
+                // console.log("thêm thành công vào bảng Xe");
+            }
+        );
+    }
+</script>

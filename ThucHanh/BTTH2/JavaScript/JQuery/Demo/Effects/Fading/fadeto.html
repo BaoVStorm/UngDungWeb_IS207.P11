@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  
+  <script>
+  $(document).ready(function(){
+    
+    $("p:first").click(function () {
+      $(this).fadeTo("slow", 0.33);
+    });
+
+  });
+  </script>
+  
+</head>
+<body>
+  <p>
+    Click this paragraph to see it fade.
+  </p>
+  <p>
+    Compare to this one that won't fade.
+  </p>
+</body>
+</html>

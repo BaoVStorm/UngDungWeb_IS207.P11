@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $("p").live("click",function(){
+    $(this).slideToggle();
+  });
+  $("button").click(function(){
+    $("p").die();
+  });
+});
+</script>
+</head>
+<body>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<p>Click any p element to make it disappear. Including this one.</p>
+<button>Remove event handlers, added with the live() method, for p elements</button>
+</body>
+</html>
+
+

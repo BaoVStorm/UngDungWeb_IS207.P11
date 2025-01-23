@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Manipulation DOM</title>
+</head>
+
+<body>
+<button>click to prepend</button>
+<h1>Thành phần h1</h1>
+	<div class="inner">
+    	<p>Thành phần p là con của div inner</p>
+        <p>Thành phần p là con của div inner</p>
+      </div>
+</body>
+<script src="../../jquery.js"></script>
+<script>
+$(document).ready(function(e) {
+    $('button').click(function(e) {
+        $('.inner').prepend('<p>Một thành phần p khác được thêm vào khi sử dụng .append()</p>');
+        $('.inner').append('<p>Một thành phần p khác được thêm vào khi sử dụng .append()</p>');
+    });
+});
+</script>
+</html>
