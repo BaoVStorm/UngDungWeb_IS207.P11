@@ -136,5 +136,8 @@ overflow: hidden;
 ------ tranform -------
 transform: rotate(35deg);
 
+----- cố định chiều dài và rộng (hình vuông) ----
+height: 50px; 
+aspect-ratio: 1 / 1;
 
 
