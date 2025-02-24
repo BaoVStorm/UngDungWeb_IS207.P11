@@ -142,4 +142,7 @@ transform: rotate(35deg);
 height: 50px; 
 aspect-ratio: 1 / 1;
 
-
+----- thay đỏi khi đạt max chiều ngang
+@media screen and (max-width: 600px) {
+  /* CSS rules for screens 600px wide or less */
+}
