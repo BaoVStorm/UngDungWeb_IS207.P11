@@ -149,3 +149,9 @@ aspect-ratio: 1 / 1;
 
 ----- thay dổi dọc ngang cách ghi 1 text
 writing-mode:sideways-lr;
+
+----- thêm padding không muốn tăng width và height
+form.detail-box-contact {
+	padding: 20px;
+	box-sizing: border-box;
+}  
