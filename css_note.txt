@@ -154,4 +154,12 @@ writing-mode:sideways-lr;
 form.detail-box-contact {
 	padding: 20px;
 	box-sizing: border-box;
-}  
+} 
+
+----- xoá, tối giản input trong form
+input {
+	border: 0px;
+	outline: 0px;
+	background-color:#00000000;
+        border-bottom: 2px rgb(20, 20, 20) solid;
+}
