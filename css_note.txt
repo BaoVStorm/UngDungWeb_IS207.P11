@@ -1,3 +1,8 @@
+Icon
+https://fontawesome.com/
+https://icons8.com
+
+CSS
 https://uiverse.io
 
 --------- Selector
