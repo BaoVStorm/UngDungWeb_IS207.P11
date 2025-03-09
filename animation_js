@@ -1,0 +1,31 @@
+------------- animation js -------------
+
+// setTimeout()
+// điều chỉnh thời gian chạy hàm
+setTimeout(() => {
+    console.log("Hiện thông báo sau 3 giây!");
+}, 3000);
+
+// setInterval()
+// lặp lại hành động sau 1 khoảng thời gian
+let count = 0;
+let interval = setInterval(() => {
+    count++;
+    console.log("Đếm: " + count);
+    if (count >= 5) clearInterval(interval);
+}, 1000);
+
+// requestAnimationFrame()
+// tạo animation mượt hơn vì nó đồng bộ với tốc độ khung hình của trình duyệt (~60 FPS).
+let position = 0;
+function moveBox() {
+    let $var = $("#name");
+
+    position += 2;
+    $var.css("margin-right", `${position}px`);
+    if (position < 200) 
+        requestAnimationFrame(moveBox);
+    
+    console.log(position);
+}
+
