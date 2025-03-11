@@ -208,6 +208,19 @@ function CallAjax() {
 }
 
 
+----------------------- Hàm tổng hợp -----------------------
+// thực thi lệnh khi chuột lăn tới vị trí
+let check_animation_skill = true
+function loadAnimation() {
+    var $skill = $("#skills");
 
+    let position = $skill.offset().top;
+    let screenHeight = $(window).height();
+    let scrollTop = $(window).scrollTop();
 
+    if(position < scrollTop + screenHeight - 250) {
+        check_animation_skill = false
+        // thực thi
+    }
+}
 
