@@ -99,7 +99,9 @@ x=$("p").position();
 $(".class").hide()		// tắt hiển thị
 $(".class").show()		// hiện thị lại
 
-.offset().top; 			// lấy vị trí của phần tử hiện tại so với đầu trang
+.offset().top 			// lấy vị trí của phần tử hiện tại so với đầu trang
+.outerHeight()			// lấy chiều dài của đối tượng
+.offset().top +.outerHeight() 	// lấy vị trí từ đuôi của phần tử hiện tại so với đầu trang
 ------- css -------
 
 .css("background-color","yellow");	// thay đổi css của phần tử
