@@ -1,0 +1,18 @@
+// animation thanh ngang sẽ chạy từ trung tâm ra 2 bên (khi thêm class .highlight-submenu)
+.subnemu {
+    position: relative;
+}
+
+.subnemu::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    right: 4px;
+
+    transform: scaleX(0);
+    transition: transform 0.6s;
+}
+
+.highlight-submenu::after {
+    transform: scaleX(1);
+}
