@@ -181,6 +181,10 @@ $(document).keydown(function(event) {
     }
 });
 
+// nhận sự kiện lăn chuột
+$(window).on("scroll", function () {
+});
+
 ----------- Ajax With JQuery -----------
 
 function CallAjax() {
