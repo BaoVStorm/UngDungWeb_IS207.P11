@@ -4,7 +4,7 @@
 khai báo jquery nên được gọi trong dom hoặc trong hàm 
 
 ----------- windows -----------
-
+// khởi tạo dom
 $(document).ready(function(){
     $("button").click(function(){
         $("div").load('welcome.txt');
@@ -12,6 +12,15 @@ $(document).ready(function(){
 });
 
 alert('you clicked input radio checked');
+
+// Lấy chiều cao của màn hình (viewport height)
+$(window).height();
+
+// Lấy vị trí cuộn hiện tại của trang (scroll position)
+$(window).scrollTop();
+
+// Lấy vị trí của phần tử so với đầu trang
+let pos = $pos.offset().top;
 
 ----------- selector for function --------
 
@@ -90,6 +99,7 @@ x=$("p").position();
 $(".class").hide()		// tắt hiển thị
 $(".class").show()		// hiện thị lại
 
+.offset().top; 			// lấy vị trí của phần tử hiện tại so với đầu trang
 ------- css -------
 
 .css("background-color","yellow");	// thay đổi css của phần tử
