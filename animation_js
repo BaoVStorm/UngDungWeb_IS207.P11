@@ -1,6 +1,6 @@
 Tìm hiểu nhiều hơn về Gsap (thư viện javascript giúp tạo hiệu ứng animation)
 
-------------- animation js -------------
+------------------ animation js ------------------
 
 // - setTimeout()
 // điều chỉnh thời gian chạy hàm
@@ -31,3 +31,12 @@ function moveBox() {
     console.log(position);
 }
 
+------------------ idea animation ------------------
+// ý tưởng animation khi scroll chuột tới
+mặc định: 
+    cho 1 Div có 2 class A và A_HL
+    .A_HL(css) cho 1 kích thước ban đầu (vd width = 0) nhưng set !important
+Thực thi:
+    load dữ liệu hết vào class A (vd: width = 95%)
+    Event: Khi scroll tới tiến hành xoá class A_HL (set transition in class A)
+    
