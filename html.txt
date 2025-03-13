@@ -18,7 +18,7 @@ s		// chữ gạch giữa
 
 <blockquote> </blockquote>	// thụt đầu dòng
 
-<img src="link" alt="label when image unload"> text	// ảnh
+<img src="main-image.jpg" alt="Ảnh chính" onerror="this.onerror=null; this.src='ảnh phụ';"> text	// ảnh
 
 <ol>
 	<li> </li>
