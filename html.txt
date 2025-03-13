@@ -37,9 +37,10 @@ s		// chữ gạch giữa
 </table>
 
 
-<a href="link"> text </a>		// to link 
+<a href="link" > text </a>		// to link 
 <a href="mailto: "> text </a> 		// to email
 <a href="javascript: "> text </a>	// to javascript
+	target="_blank"				// nếu có target="_blank" khi nhấn sẽ mở trang mới
 
 <address> </address>			// địa chỉ
 
