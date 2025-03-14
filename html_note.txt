@@ -140,6 +140,9 @@ let trueorfalse = $("input[name='pet'][value='1']").is(":checked");	// kiểm tr
                <option value="Office12" selected>Office 2012</option>
      	</select>
 
+-- file 
+	<input type="file" name="nameFile">
+
 -- field set
 	<fieldset>
                	<legend>Subject</legend>
@@ -148,3 +151,4 @@ let trueorfalse = $("input[name='pet'][value='1']").is(":checked");	// kiểm tr
                 <input type="checkbox" name="Subjects" value="Math" checked>Mathematics<br>
                 <input type="checkbox" name="Subjects" value="GraphTheory"> Graph Theory<br>
        	</fieldset>
+
