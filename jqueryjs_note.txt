@@ -56,6 +56,8 @@ $("div").load('welcome.txt');
 .removeClass("a");
 .hasClass("a")				// kiểm tra có class a không
 
+.is("#a")				// kiểm tra có id #a không
+
 .attr("title");				// Lấy giá trị của attribute có tên là "title"
 .attr('type', "password");		// đổi kiểu attributes type thành "password"
 removeAttr("title");
