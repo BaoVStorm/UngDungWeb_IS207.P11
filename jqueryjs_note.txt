@@ -66,7 +66,9 @@ removeAttr("title");
 .val() || [];				// from input
 
 .each(function() { $(this).val() })	// for từng phần tử
- 
+
+.eq(1)					// lấy đối tượng ở phần thử số 2
+
 .text(title);
 .html('<i> aaa <i>');
 var htmlStr= $(this).html();
